@@ -91,7 +91,18 @@ Once installed, simply send `/help` or `Superpowers help` to your Antigravity ag
 
 ---
 
-## 🔄 The Core Process
+## � Recommended Path for New Users
+
+If you are new to the Superpowers methodology, we highly recommend following this path:
+
+1.  **Read the [Workflow Guideline](docs/GUIDELINE.md)**: A visual and step-by-step primer on the methodology.
+2.  **Explore the [Example Project](docs/examples/example-project/README.md)**: See exactly how PRDs, designs, plans, and code look in a real scenario.
+3.  **Run `/help`**: Get a list of commands available in your current session.
+
+
+---
+
+## �🔄 The Core Process
 
 ```mermaid
 graph LR
@@ -151,9 +162,12 @@ We've synthesized the best skills from across the agentic ecosystem:
 
 - [PROJECT_RULES.md](PROJECT_RULES.md): The "Constitution" of the Superpowers workflow.
 - [SUPERPOWER-STYLE.md](SUPERPOWER-STYLE.md): Standards for documentation and agent communication.
+- [Workflow Guideline](docs/GUIDELINE.md): **(NEW)** visual guide to the core methodology.
+- [Example Project](docs/examples/example-project/README.md): **(NEW)** End-to-end demonstration of the workflow in action.
 - [PRD.md](PRD.md): The original Product Requirements Document for this integration.
 - [INSTALL.md](antigravity/INSTALL.md): Detailed installation guide for all environments.
 - `docs/plans/`: Recommended directory for all design and implementation artifacts.
+
 
 ---
 
@@ -172,6 +186,21 @@ Superpowers for Antigravity is designed to be **fully compatible** with the [GSD
 
 - **Synergy**: Use GSD for high-level project management (`SPEC.md`, `ROADMAP.md`) and Superpowers for the low-level implementation cycle (`/brainstorm`, `/plan`).
 - **Shared Skills**: Both frameworks share core context-management and verification skills, ensuring a unified experience.
+
+---
+
+## 🛠️ For Maintainers: Publishing
+
+If you want to update the version available via `npx`, follow these steps:
+
+### 1. Using GitHub (Direct)
+The command `npx github:SriSatyaLokesh/superpowers-for-antigravity` works immediately after you push to the `main` branch. No extra publishing step is required!
+
+### 2. Using NPM (Optional)
+To allow users to just run `npx superpowers-for-antigravity`, you must publish to the NPM registry:
+1.  **Login**: `npm login`
+2.  **Version Update**: `npm version patch` (or minor/major)
+3.  **Publish**: `npm publish --access public`
 
 ---
 
