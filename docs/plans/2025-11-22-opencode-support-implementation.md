@@ -1,12 +1,12 @@
-# OpenCode Support Implementation Plan
+# antigravity Support Implementation Plan
 
-> **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
+> **For Antigravity:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
-**Goal:** Add full superpowers support for OpenCode.ai with a native JavaScript plugin that shares core functionality with the existing Codex implementation.
+**Goal:** Add full superpowers support for antigravity.ai with a native JavaScript plugin that shares core functionality with the existing antigravity implementation.
 
-**Architecture:** Extract common skill discovery/parsing logic into `lib/skills-core.js`, refactor Codex to use it, then build OpenCode plugin using their native plugin API with custom tools and session hooks.
+**Architecture:** Extract common skill discovery/parsing logic into `lib/skills-core.js`, refactor antigravity to use it, then build antigravity plugin using their native plugin API with custom tools and session hooks.
 
-**Tech Stack:** Node.js, JavaScript, OpenCode Plugin API, Git worktrees
+**Tech Stack:** Node.js, JavaScript, antigravity Plugin API, Git worktrees
 
 ---
 
@@ -16,7 +16,7 @@
 
 **Files:**
 - Create: `lib/skills-core.js`
-- Reference: `.codex/superpowers-codex` (lines 40-74)
+- Reference: `.antigravity/superpowers-antigravity` (lines 40-74)
 
 **Step 1: Create lib/skills-core.js with extractFrontmatter function**
 
@@ -98,7 +98,7 @@ git commit -m "feat: create shared skills core module with frontmatter parser"
 
 **Files:**
 - Modify: `lib/skills-core.js`
-- Reference: `.codex/superpowers-codex` (lines 97-136)
+- Reference: `.antigravity/superpowers-antigravity` (lines 97-136)
 
 **Step 1: Add findSkillsInDir function to skills-core.js**
 
@@ -180,7 +180,7 @@ git commit -m "feat: add skill discovery function to core module"
 
 **Files:**
 - Modify: `lib/skills-core.js`
-- Reference: `.codex/superpowers-codex` (lines 212-280)
+- Reference: `.antigravity/superpowers-antigravity` (lines 212-280)
 
 **Step 1: Add resolveSkillPath function**
 
@@ -259,7 +259,7 @@ git commit -m "feat: add skill path resolution with shadowing support"
 
 **Files:**
 - Modify: `lib/skills-core.js`
-- Reference: `.codex/superpowers-codex` (lines 16-38)
+- Reference: `.antigravity/superpowers-antigravity` (lines 16-38)
 
 **Step 1: Add checkForUpdates function**
 
@@ -328,12 +328,12 @@ git commit -m "feat: add git update checking to core module"
 
 ---
 
-## Phase 2: Refactor Codex to Use Shared Core
+## Phase 2: Refactor antigravity to Use Shared Core
 
-### Task 5: Update Codex to Import Shared Core
+### Task 5: Update antigravity to Import Shared Core
 
 **Files:**
-- Modify: `.codex/superpowers-codex` (add import at top)
+- Modify: `.antigravity/superpowers-antigravity` (add import at top)
 
 **Step 1: Add import statement**
 
@@ -345,14 +345,14 @@ const skillsCore = require('../lib/skills-core');
 
 **Step 2: Verify syntax**
 
-Run: `node -c .codex/superpowers-codex`
+Run: `node -c .antigravity/superpowers-antigravity`
 Expected: No output
 
 **Step 3: Commit**
 
 ```bash
-git add .codex/superpowers-codex
-git commit -m "refactor: import shared skills core in codex"
+git add .antigravity/superpowers-antigravity
+git commit -m "refactor: import shared skills core in antigravity"
 ```
 
 ---
@@ -360,7 +360,7 @@ git commit -m "refactor: import shared skills core in codex"
 ### Task 6: Replace extractFrontmatter with Core Version
 
 **Files:**
-- Modify: `.codex/superpowers-codex` (lines 40-74)
+- Modify: `.antigravity/superpowers-antigravity` (lines 40-74)
 
 **Step 1: Remove local extractFrontmatter function**
 
@@ -374,14 +374,14 @@ Affected lines approximately: 90, 310
 
 **Step 3: Verify script still works**
 
-Run: `.codex/superpowers-codex find-skills | head -20`
+Run: `.antigravity/superpowers-antigravity find-skills | head -20`
 Expected: Shows list of skills
 
 **Step 4: Commit**
 
 ```bash
-git add .codex/superpowers-codex
-git commit -m "refactor: use shared extractFrontmatter in codex"
+git add .antigravity/superpowers-antigravity
+git commit -m "refactor: use shared extractFrontmatter in antigravity"
 ```
 
 ---
@@ -389,7 +389,7 @@ git commit -m "refactor: use shared extractFrontmatter in codex"
 ### Task 7: Replace findSkillsInDir with Core Version
 
 **Files:**
-- Modify: `.codex/superpowers-codex` (lines 97-136, approximately)
+- Modify: `.antigravity/superpowers-antigravity` (lines 97-136, approximately)
 
 **Step 1: Remove local findSkillsInDir function**
 
@@ -401,14 +401,14 @@ Replace calls from `findSkillsInDir(` to `skillsCore.findSkillsInDir(`
 
 **Step 3: Verify script still works**
 
-Run: `.codex/superpowers-codex find-skills | head -20`
+Run: `.antigravity/superpowers-antigravity find-skills | head -20`
 Expected: Shows list of skills
 
 **Step 4: Commit**
 
 ```bash
-git add .codex/superpowers-codex
-git commit -m "refactor: use shared findSkillsInDir in codex"
+git add .antigravity/superpowers-antigravity
+git commit -m "refactor: use shared findSkillsInDir in antigravity"
 ```
 
 ---
@@ -416,7 +416,7 @@ git commit -m "refactor: use shared findSkillsInDir in codex"
 ### Task 8: Replace checkForUpdates with Core Version
 
 **Files:**
-- Modify: `.codex/superpowers-codex` (lines 16-38, approximately)
+- Modify: `.antigravity/superpowers-antigravity` (lines 16-38, approximately)
 
 **Step 1: Remove local checkForUpdates function**
 
@@ -428,28 +428,28 @@ Replace calls from `checkForUpdates(` to `skillsCore.checkForUpdates(`
 
 **Step 3: Verify script still works**
 
-Run: `.codex/superpowers-codex bootstrap | head -50`
+Run: `.antigravity/superpowers-antigravity bootstrap | head -50`
 Expected: Shows bootstrap content
 
 **Step 4: Commit**
 
 ```bash
-git add .codex/superpowers-codex
-git commit -m "refactor: use shared checkForUpdates in codex"
+git add .antigravity/superpowers-antigravity
+git commit -m "refactor: use shared checkForUpdates in antigravity"
 ```
 
 ---
 
-## Phase 3: Build OpenCode Plugin
+## Phase 3: Build antigravity Plugin
 
-### Task 9: Create OpenCode Plugin Directory Structure
+### Task 9: Create antigravity Plugin Directory Structure
 
 **Files:**
-- Create: `.opencode/plugin/superpowers.js`
+- Create: `.antigravity/plugin/superpowers.js`
 
 **Step 1: Create directory**
 
-Run: `mkdir -p .opencode/plugin`
+Run: `mkdir -p .antigravity/plugin`
 
 **Step 2: Create basic plugin file**
 
@@ -457,7 +457,7 @@ Run: `mkdir -p .opencode/plugin`
 #!/usr/bin/env node
 
 /**
- * Superpowers plugin for OpenCode.ai
+ * Superpowers plugin for antigravity.ai
  *
  * Provides custom tools for loading and discovering skills,
  * with automatic bootstrap on session start.
@@ -469,11 +469,11 @@ const fs = require('fs');
 const os = require('os');
 
 const homeDir = os.homedir();
-const superpowersSkillsDir = path.join(homeDir, '.config/opencode/superpowers/skills');
-const personalSkillsDir = path.join(homeDir, '.config/opencode/skills');
+const superpowersSkillsDir = path.join(homeDir, '.config/antigravity/superpowers/skills');
+const personalSkillsDir = path.join(homeDir, '.config/antigravity/skills');
 
 /**
- * OpenCode plugin entry point
+ * antigravity plugin entry point
  */
 export const SuperpowersPlugin = async ({ project, client, $, directory, worktree }) => {
   return {
@@ -484,14 +484,14 @@ export const SuperpowersPlugin = async ({ project, client, $, directory, worktre
 
 **Step 3: Verify file was created**
 
-Run: `ls -l .opencode/plugin/superpowers.js`
+Run: `ls -l .antigravity/plugin/superpowers.js`
 Expected: File exists
 
 **Step 4: Commit**
 
 ```bash
-git add .opencode/plugin/superpowers.js
-git commit -m "feat: create opencode plugin scaffold"
+git add .antigravity/plugin/superpowers.js
+git commit -m "feat: create antigravity plugin scaffold"
 ```
 
 ---
@@ -499,7 +499,7 @@ git commit -m "feat: create opencode plugin scaffold"
 ### Task 10: Implement use_skill Tool
 
 **Files:**
-- Modify: `.opencode/plugin/superpowers.js`
+- Modify: `.antigravity/plugin/superpowers.js`
 
 **Step 1: Add use_skill tool implementation**
 
@@ -558,7 +558,7 @@ export const SuperpowersPlugin = async ({ project, client, $, directory, worktre
           const content = contentLines.join('\n').trim();
           const skillDirectory = path.dirname(resolved.skillFile);
 
-          // Format output similar to Claude Code's Skill tool
+          // Format output similar to Antigravity's Skill tool
           return `# ${name || skill_name}
 # ${description || ''}
 # Supporting tools and docs are in ${skillDirectory}
@@ -574,14 +574,14 @@ ${content}`;
 
 **Step 2: Verify syntax**
 
-Run: `node -c .opencode/plugin/superpowers.js`
+Run: `node -c .antigravity/plugin/superpowers.js`
 Expected: No output
 
 **Step 3: Commit**
 
 ```bash
-git add .opencode/plugin/superpowers.js
-git commit -m "feat: implement use_skill tool for opencode"
+git add .antigravity/plugin/superpowers.js
+git commit -m "feat: implement use_skill tool for antigravity"
 ```
 
 ---
@@ -589,7 +589,7 @@ git commit -m "feat: implement use_skill tool for opencode"
 ### Task 11: Implement find_skills Tool
 
 **Files:**
-- Modify: `.opencode/plugin/superpowers.js`
+- Modify: `.antigravity/plugin/superpowers.js`
 
 **Step 1: Add find_skills tool to tools array**
 
@@ -617,7 +617,7 @@ Add after the use_skill tool definition, before closing the tools array:
           const allSkills = [...personalSkills, ...superpowersSkills];
 
           if (allSkills.length === 0) {
-            return 'No skills found. Install superpowers skills to ~/.config/opencode/superpowers/skills/';
+            return 'No skills found. Install superpowers skills to ~/.config/antigravity/superpowers/skills/';
           }
 
           let output = 'Available skills:\n\n';
@@ -640,14 +640,14 @@ Add after the use_skill tool definition, before closing the tools array:
 
 **Step 2: Verify syntax**
 
-Run: `node -c .opencode/plugin/superpowers.js`
+Run: `node -c .antigravity/plugin/superpowers.js`
 Expected: No output
 
 **Step 3: Commit**
 
 ```bash
-git add .opencode/plugin/superpowers.js
-git commit -m "feat: implement find_skills tool for opencode"
+git add .antigravity/plugin/superpowers.js
+git commit -m "feat: implement find_skills tool for antigravity"
 ```
 
 ---
@@ -655,7 +655,7 @@ git commit -m "feat: implement find_skills tool for opencode"
 ### Task 12: Implement Session Start Hook
 
 **Files:**
-- Modify: `.opencode/plugin/superpowers.js`
+- Modify: `.antigravity/plugin/superpowers.js`
 
 **Step 1: Add session.started hook**
 
@@ -699,10 +699,10 @@ After the tools array, add:
 
       // Tool mapping instructions
       const toolMapping = `
-**Tool Mapping for OpenCode:**
-When skills reference tools you don't have, substitute OpenCode equivalents:
+**Tool Mapping for antigravity:**
+When skills reference tools you don't have, substitute antigravity equivalents:
 - \`TodoWrite\` → \`update_plan\` (your planning/task tracking tool)
-- \`Task\` tool with subagents → Use OpenCode's subagent system (@mention syntax or automatic dispatch)
+- \`Task\` tool with subagents → Use antigravity's subagent system (@mention syntax or automatic dispatch)
 - \`Skill\` tool → \`use_skill\` custom tool (already available)
 - \`Read\`, \`Write\`, \`Edit\`, \`Bash\` → Use your native tools
 
@@ -712,18 +712,18 @@ When skills reference tools you don't have, substitute OpenCode equivalents:
 - Utilities and helpers specific to that skill
 
 **Skills naming:**
-- Superpowers skills: \`superpowers:skill-name\` (from ~/.config/opencode/superpowers/skills/)
-- Personal skills: \`skill-name\` (from ~/.config/opencode/skills/)
+- Superpowers skills: \`superpowers:skill-name\` (from ~/.config/antigravity/superpowers/skills/)
+- Personal skills: \`skill-name\` (from ~/.config/antigravity/skills/)
 - Personal skills override superpowers skills when names match
 `;
 
       // Check for updates (non-blocking)
       const hasUpdates = skillsCore.checkForUpdates(
-        path.join(homeDir, '.config/opencode/superpowers')
+        path.join(homeDir, '.config/antigravity/superpowers')
       );
 
       const updateNotice = hasUpdates ?
-        '\n\n⚠️ **Updates available!** Run `cd ~/.config/opencode/superpowers && git pull` to update superpowers.' :
+        '\n\n⚠️ **Updates available!** Run `cd ~/.config/antigravity/superpowers && git pull` to update superpowers.' :
         '';
 
       // Return context to inject into session
@@ -743,33 +743,33 @@ ${toolMapping}${updateNotice}
 
 **Step 2: Verify syntax**
 
-Run: `node -c .opencode/plugin/superpowers.js`
+Run: `node -c .antigravity/plugin/superpowers.js`
 Expected: No output
 
 **Step 3: Commit**
 
 ```bash
-git add .opencode/plugin/superpowers.js
-git commit -m "feat: implement session.started hook for opencode"
+git add .antigravity/plugin/superpowers.js
+git commit -m "feat: implement session.started hook for antigravity"
 ```
 
 ---
 
 ## Phase 4: Documentation
 
-### Task 13: Create OpenCode Installation Guide
+### Task 13: Create antigravity Installation Guide
 
 **Files:**
-- Create: `.opencode/INSTALL.md`
+- Create: `.antigravity/INSTALL.md`
 
 **Step 1: Create installation guide**
 
 ```markdown
-# Installing Superpowers for OpenCode
+# Installing Superpowers for antigravity
 
 ## Prerequisites
 
-- [OpenCode.ai](https://opencode.ai) installed
+- [antigravity.ai](https://antigravity.ai) installed
 - Node.js installed
 - Git installed
 
@@ -778,29 +778,29 @@ git commit -m "feat: implement session.started hook for opencode"
 ### 1. Install Superpowers Skills
 
 ```bash
-# Clone superpowers skills to OpenCode config directory
-mkdir -p ~/.config/opencode/superpowers
-git clone https://github.com/obra/superpowers.git ~/.config/opencode/superpowers
+# Clone superpowers skills to antigravity config directory
+mkdir -p ~/.config/antigravity/superpowers
+git clone https://github.com/obra/superpowers.git ~/.config/antigravity/superpowers
 ```
 
 ### 2. Install the Plugin
 
 The plugin is included in the superpowers repository you just cloned.
 
-OpenCode will automatically discover it from:
-- `~/.config/opencode/superpowers/.opencode/plugin/superpowers.js`
+antigravity will automatically discover it from:
+- `~/.config/antigravity/superpowers/.antigravity/plugin/superpowers.js`
 
 Or you can link it to the project-local plugin directory:
 
 ```bash
-# In your OpenCode project
-mkdir -p .opencode/plugin
-ln -s ~/.config/opencode/superpowers/.opencode/plugin/superpowers.js .opencode/plugin/superpowers.js
+# In your antigravity project
+mkdir -p .antigravity/plugin
+ln -s ~/.config/antigravity/superpowers/.antigravity/plugin/superpowers.js .antigravity/plugin/superpowers.js
 ```
 
-### 3. Restart OpenCode
+### 3. Restart antigravity
 
-Restart OpenCode to load the plugin. On the next session, you should see:
+Restart antigravity to load the plugin. On the next session, you should see:
 
 ```
 You have superpowers.
@@ -826,13 +826,13 @@ use use_skill tool with skill_name: "superpowers:brainstorming"
 
 ### Personal Skills
 
-Create your own skills in `~/.config/opencode/skills/`:
+Create your own skills in `~/.config/antigravity/skills/`:
 
 ```bash
-mkdir -p ~/.config/opencode/skills/my-skill
+mkdir -p ~/.config/antigravity/skills/my-skill
 ```
 
-Create `~/.config/opencode/skills/my-skill/SKILL.md`:
+Create `~/.config/antigravity/skills/my-skill/SKILL.md`:
 
 ```markdown
 ---
@@ -850,7 +850,7 @@ Personal skills override superpowers skills with the same name.
 ## Updating
 
 ```bash
-cd ~/.config/opencode/superpowers
+cd ~/.config/antigravity/superpowers
 git pull
 ```
 
@@ -858,21 +858,21 @@ git pull
 
 ### Plugin not loading
 
-1. Check plugin file exists: `ls ~/.config/opencode/superpowers/.opencode/plugin/superpowers.js`
-2. Check OpenCode logs for errors
+1. Check plugin file exists: `ls ~/.config/antigravity/superpowers/.antigravity/plugin/superpowers.js`
+2. Check antigravity logs for errors
 3. Verify Node.js is installed: `node --version`
 
 ### Skills not found
 
-1. Verify skills directory exists: `ls ~/.config/opencode/superpowers/skills`
+1. Verify skills directory exists: `ls ~/.config/antigravity/superpowers/skills`
 2. Use `find_skills` tool to see what's discovered
 3. Check file structure: each skill should have a `SKILL.md` file
 
 ### Tool mapping issues
 
-When a skill references a Claude Code tool you don't have:
+When a skill references a Antigravity tool you don't have:
 - `TodoWrite` → use `update_plan`
-- `Task` with subagents → use `@mention` syntax to invoke OpenCode subagents
+- `Task` with subagents → use `@mention` syntax to invoke antigravity subagents
 - `Skill` → use `use_skill` tool
 - File operations → use your native tools
 
@@ -884,14 +884,14 @@ When a skill references a Claude Code tool you don't have:
 
 **Step 2: Verify file created**
 
-Run: `ls -l .opencode/INSTALL.md`
+Run: `ls -l .antigravity/INSTALL.md`
 Expected: File exists
 
 **Step 3: Commit**
 
 ```bash
-git add .opencode/INSTALL.md
-git commit -m "docs: add opencode installation guide"
+git add .antigravity/INSTALL.md
+git commit -m "docs: add antigravity installation guide"
 ```
 
 ---
@@ -901,16 +901,16 @@ git commit -m "docs: add opencode installation guide"
 **Files:**
 - Modify: `README.md`
 
-**Step 1: Add OpenCode section**
+**Step 1: Add antigravity section**
 
-Find the section about supported platforms (search for "Codex" in the file), and add after it:
+Find the section about supported platforms (search for "antigravity" in the file), and add after it:
 
 ```markdown
-### OpenCode
+### antigravity
 
-Superpowers works with [OpenCode.ai](https://opencode.ai) through a native JavaScript plugin.
+Superpowers works with [antigravity.ai](https://antigravity.ai) through a native JavaScript plugin.
 
-**Installation:** See [.opencode/INSTALL.md](.opencode/INSTALL.md)
+**Installation:** See [.antigravity/INSTALL.md](.antigravity/INSTALL.md)
 
 **Features:**
 - Custom tools: `use_skill` and `find_skills`
@@ -921,14 +921,14 @@ Superpowers works with [OpenCode.ai](https://opencode.ai) through a native JavaS
 
 **Step 2: Verify formatting**
 
-Run: `grep -A 10 "### OpenCode" README.md`
+Run: `grep -A 10 "### antigravity" README.md`
 Expected: Shows the section you added
 
 **Step 3: Commit**
 
 ```bash
 git add README.md
-git commit -m "docs: add opencode support to readme"
+git commit -m "docs: add antigravity support to readme"
 ```
 
 ---
@@ -938,7 +938,7 @@ git commit -m "docs: add opencode support to readme"
 **Files:**
 - Modify: `RELEASE-NOTES.md`
 
-**Step 1: Add entry for OpenCode support**
+**Step 1: Add entry for antigravity support**
 
 At the top of the file (after the header), add:
 
@@ -947,16 +947,16 @@ At the top of the file (after the header), add:
 
 ### Added
 
-- **OpenCode Support**: Native JavaScript plugin for OpenCode.ai
+- **antigravity Support**: Native JavaScript plugin for antigravity.ai
   - Custom tools: `use_skill` and `find_skills`
   - Automatic session bootstrap with tool mapping instructions
   - Shared core module (`lib/skills-core.js`) for code reuse
-  - Installation guide in `.opencode/INSTALL.md`
+  - Installation guide in `.antigravity/INSTALL.md`
 
 ### Changed
 
-- **Refactored Codex Implementation**: Now uses shared `lib/skills-core.js` module
-  - Eliminates code duplication between Codex and OpenCode
+- **Refactored antigravity Implementation**: Now uses shared `lib/skills-core.js` module
+  - Eliminates code duplication between antigravity and antigravity
   - Single source of truth for skill discovery and parsing
 
 ---
@@ -972,31 +972,31 @@ Expected: Shows your new section
 
 ```bash
 git add RELEASE-NOTES.md
-git commit -m "docs: add opencode support to release notes"
+git commit -m "docs: add antigravity support to release notes"
 ```
 
 ---
 
 ## Phase 5: Final Verification
 
-### Task 16: Test Codex Still Works
+### Task 16: Test antigravity Still Works
 
 **Files:**
-- Test: `.codex/superpowers-codex`
+- Test: `.antigravity/superpowers-antigravity`
 
 **Step 1: Test find-skills command**
 
-Run: `.codex/superpowers-codex find-skills | head -20`
+Run: `.antigravity/superpowers-antigravity find-skills | head -20`
 Expected: Shows list of skills with names and descriptions
 
 **Step 2: Test use-skill command**
 
-Run: `.codex/superpowers-codex use-skill superpowers:brainstorming | head -20`
+Run: `.antigravity/superpowers-antigravity use-skill superpowers:brainstorming | head -20`
 Expected: Shows brainstorming skill content
 
 **Step 3: Test bootstrap command**
 
-Run: `.codex/superpowers-codex bootstrap | head -30`
+Run: `.antigravity/superpowers-antigravity bootstrap | head -30`
 Expected: Shows bootstrap content with instructions
 
 **Step 4: If all tests pass, record success**
@@ -1015,18 +1015,18 @@ No commit needed - this is verification only.
 Run:
 ```bash
 ls -l lib/skills-core.js
-ls -l .opencode/plugin/superpowers.js
-ls -l .opencode/INSTALL.md
+ls -l .antigravity/plugin/superpowers.js
+ls -l .antigravity/INSTALL.md
 ```
 
 Expected: All files exist
 
 **Step 2: Verify directory structure**
 
-Run: `tree -L 2 .opencode/` (or `find .opencode -type f` if tree not available)
+Run: `tree -L 2 .antigravity/` (or `find .antigravity -type f` if tree not available)
 Expected:
 ```
-.opencode/
+.antigravity/
 ├── INSTALL.md
 └── plugin/
     └── superpowers.js
@@ -1057,26 +1057,26 @@ Expected: Shows all commits from this implementation
 
 Create a completion summary showing:
 - Total commits made
-- Files created: `lib/skills-core.js`, `.opencode/plugin/superpowers.js`, `.opencode/INSTALL.md`
-- Files modified: `.codex/superpowers-codex`, `README.md`, `RELEASE-NOTES.md`
-- Testing performed: Codex commands verified
-- Ready for: Testing with actual OpenCode installation
+- Files created: `lib/skills-core.js`, `.antigravity/plugin/superpowers.js`, `.antigravity/INSTALL.md`
+- Files modified: `.antigravity/superpowers-antigravity`, `README.md`, `RELEASE-NOTES.md`
+- Testing performed: antigravity commands verified
+- Ready for: Testing with actual antigravity installation
 
 **Step 4: Report completion**
 
 Present summary to user and offer to:
 1. Push to remote
 2. Create pull request
-3. Test with real OpenCode installation (requires OpenCode installed)
+3. Test with real antigravity installation (requires antigravity installed)
 
 ---
 
-## Testing Guide (Manual - Requires OpenCode)
+## Testing Guide (Manual - Requires antigravity)
 
-These steps require OpenCode to be installed and are not part of the automated implementation:
+These steps require antigravity to be installed and are not part of the automated implementation:
 
-1. **Install skills**: Follow `.opencode/INSTALL.md`
-2. **Start OpenCode session**: Verify bootstrap appears
+1. **Install skills**: Follow `.antigravity/INSTALL.md`
+2. **Start antigravity session**: Verify bootstrap appears
 3. **Test find_skills**: Should list all available skills
 4. **Test use_skill**: Load a skill and verify content appears
 5. **Test supporting files**: Verify skill directory paths are accessible
@@ -1086,9 +1086,9 @@ These steps require OpenCode to be installed and are not part of the automated i
 ## Success Criteria
 
 - [ ] `lib/skills-core.js` created with all core functions
-- [ ] `.codex/superpowers-codex` refactored to use shared core
-- [ ] Codex commands still work (find-skills, use-skill, bootstrap)
-- [ ] `.opencode/plugin/superpowers.js` created with tools and hooks
+- [ ] `.antigravity/superpowers-antigravity` refactored to use shared core
+- [ ] antigravity commands still work (find-skills, use-skill, bootstrap)
+- [ ] `.antigravity/plugin/superpowers.js` created with tools and hooks
 - [ ] Installation guide created
 - [ ] README and RELEASE-NOTES updated
 - [ ] All changes committed

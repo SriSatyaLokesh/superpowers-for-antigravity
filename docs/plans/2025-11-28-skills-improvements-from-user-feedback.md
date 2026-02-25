@@ -2,13 +2,13 @@
 
 **Date:** 2025-11-28
 **Status:** Draft
-**Source:** Two Claude instances using superpowers in real development scenarios
+**Source:** Two Antigravity instances using superpowers in real development scenarios
 
 ---
 
 ## Executive Summary
 
-Two Claude instances provided detailed feedback from actual development sessions. Their feedback reveals **systematic gaps** in current skills that allowed preventable bugs to ship despite following the skills.
+Two Antigravity instances provided detailed feedback from actual development sessions. Their feedback reveals **systematic gaps** in current skills that allowed preventable bugs to ship despite following the skills.
 
 **Critical insight:** These are problem reports, not just solution proposals. The problems are real; the solutions need careful evaluation.
 
@@ -31,7 +31,7 @@ Two Claude instances provided detailed feedback from actual development sessions
 - Set `OPENAI_API_KEY` env var
 - Got status 200 responses
 - Reported "OpenAI integration working"
-- **BUT** response contained `"model": "claude-sonnet-4-20250514"` - was actually using Anthropic
+- **BUT** response contained `"model": "Antigravity-sonnet-4-20250514"` - was actually using Anthropic
 
 **Root cause:**
 `verification-before-completion` checks operations succeed but not that outcomes reflect intended configuration changes.

@@ -1,0 +1,33 @@
+{
+    "name": "superpowers-for-antigravity",
+    "version": "1.0.0",
+    "description": "Standard Operating Procedure (SOP) and development methodology for agentic software engineering on Google Antigravity.",
+    "main": "scripts/init.js",
+    "bin": {
+        "superpower-init": "scripts/init.js"
+    },
+    "scripts": {
+        "test": "node tests/test-init.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/SriSatyaLokesh/superpowers-for-antigravity.git"
+    },
+    "keywords": [
+        "antigravity",
+        "agentic-workflows",
+        "tdd",
+        "brainstorming",
+        "productivity",
+        "gemini"
+    ],
+    "author": "Sri Satya Lokesh",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/SriSatyaLokesh/superpowers-for-antigravity/issues"
+    },
+    "homepage": "https://github.com/SriSatyaLokesh/superpowers-for-antigravity#readme",
+    "engines": {
+        "node": ">=16.0.0"
+    }
+}
