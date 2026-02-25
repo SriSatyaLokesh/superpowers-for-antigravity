@@ -9,7 +9,7 @@ The fastest way to install Superpowers into any project is via `npx`. This autom
 
 ```bash
 # Run this from your project root
-npx superpowers-for-antigravity
+npx github:SriSatyaLokesh/superpowers-for-antigravity
 ```
 
 ---

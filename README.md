@@ -42,7 +42,7 @@ AI coding agents are powerful but often **undisciplined**. They might:
 The fastest way to install the Superpowers methodology into your project:
 
 ```bash
-npx superpowers-for-antigravity
+npx github:SriSatyaLokesh/superpowers-for-antigravity
 ```
 
 <details>
