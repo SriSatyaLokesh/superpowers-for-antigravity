@@ -41,7 +41,7 @@ The agentic coding space is moving towards standardizing "skills" and "workflows
 ## 3.2 Business Objectives
 
 -   Increase adoption of Superpowers by supporting the Antigravity user base.
--   Provide a "Get Shit Done" (GSD) equivalent for Superpowers that is optimized for Antigravity's toolset.
+-   Provide a disciplined process-driven development framework for Antigravity optimized for its toolset.
 
 ## 3.3 Success Metrics (KPIs)
 
@@ -136,7 +136,7 @@ For each persona:
 
 # 10. Assumptions & Dependencies
 
--   Assumption: Antigravity follows the folder-based skill discovery pattern (similar to GSD).
+-   Assumption: Antigravity follows the standard folder-based skill discovery pattern.
 -   Dependency: User must have Git installed to clone/update.
 -   Dependency: Antigravity version must support `.agent/skills` and `.agent/workflows`.
 

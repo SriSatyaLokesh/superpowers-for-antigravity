@@ -32,7 +32,11 @@ try {
 
     const requiredPaths = [
         '.agent/skills/using-superpowers/SKILL.md',
+        '.agent/skills/using-superpowers/references/antigravity-tools.md',
         '.agent/skills/brainstorming/SKILL.md',
+        '.agent/skills/diagnosing-superpowers/SKILL.md',
+        '.agent/skills/test-driven-development/writing-good-tests.md',
+        '.agent/skills/subagent-driven-development/task-reviewer-prompt.md',
         '.agent/workflows/brainstorm.md',
         '.gemini/GEMINI.md',
         'PROJECT_RULES.md',
@@ -45,6 +49,25 @@ try {
             console.log(`  ✅ [PASS] Found: ${expectedPath}`);
         } else {
             console.error(`  ❌ [FAIL] Missing: ${expectedPath}`);
+            testsFailed++;
+        }
+    });
+
+    const forbiddenPaths = [
+        '.agent/skills/gsd-codebase-mapper',
+        '.agent/skills/gsd-context-fetch',
+        '.agent/skills/gsd-context-health-monitor',
+        '.agent/skills/gsd-empirical-validation',
+        '.agent/skills/gsd-verifier',
+        '.agent/skills/test-driven-development/testing-anti-patterns.md'
+    ];
+
+    forbiddenPaths.forEach(forbiddenPath => {
+        const fullPath = path.join(tmpDir, forbiddenPath);
+        if (!fs.existsSync(fullPath)) {
+            console.log(`  ✅ [PASS] Confirmed absence of: ${forbiddenPath}`);
+        } else {
+            console.error(`  ❌ [FAIL] Unexpectedly found deprecated/removed item: ${forbiddenPath}`);
             testsFailed++;
         }
     });

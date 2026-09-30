@@ -6,9 +6,9 @@
 
 ### A process-driven development workflow for agentic software engineering
 
-[![Version](https://img.shields.io/badge/version-1.0.0-00C853?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.1.0-00C853?style=flat-square)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-2196F3?style=flat-square)](LICENSE)
-[![Based on GSD](https://img.shields.io/badge/based%20on-GSD-7B2D8E?style=flat-square)](https://github.com/toonight/get-shit-done-for-antigravity)
+[![Upstream](https://img.shields.io/badge/upstream-obra%2Fsuperpowers%20v6.4.2-blue?style=flat-square)](https://github.com/obra/superpowers)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20Mac-FF6D00?style=flat-square)](#-getting-started)
 
 <br/>
@@ -127,21 +127,34 @@ graph LR
 
 ---
 
-## 🧬 Expanded Capabilities
+## 🧬 Complete Skills Library (23 Total Skills)
 
-We've synthesized the best skills from across the agentic ecosystem:
+Antigravity Superpowers combines the full upstream Superpowers methodology with production-grade engineering capabilities:
 
-### 🛡️ Process Excellence (GSD Inspired)
-- **Codebase Mapping**: Total system understanding before making changes.
-- **Context Fetch**: Smart retrieval to prevent context pollution.
-- **Context Health Monitor**: Proactive detection of AI "hallucination thresholds."
-- **Empirical Validation**: Requiring hard proof (logs/screenshots) for every task.
+### 🧠 Core Superpowers (Synced with Upstream v6.4.2)
+- **`brainstorming`**: Socratic design refinement featuring a three-path router (fast / standard / deep) & interactive Visual Companion server.
+- **`diagnosing-superpowers`**: Forensic transcript analysis, stumble and repeated-work detection, and scrubbed bug report generation.
+- **`writing-plans`**: Leaner plans with Global Constraints and per-task Interfaces blocks (v6.4.2).
+- **`executing-plans`**: Inline plan execution and batch checkpoints.
+- **`subagent-driven-development`**: Plan-scoped workspaces (`.superpowers/sdd/<plan>`) and resume-based task review loop.
+- **`test-driven-development`**: Red-Green-Refactor cycle with modern falsifiability design (`writing-good-tests.md`).
+- **`systematic-debugging`**: 4-phase root cause analysis and polluter isolation.
+- **`verification-before-completion`**: Strict hard proof and evidence-first completion.
+- **`requesting-code-review` & `receiving-code-review`**: Structured reviewer contracts.
+- **`using-git-worktrees` & `finishing-a-development-branch`**: Clean branch isolation and forge-agnostic PR options.
+- **`dispatching-parallel-agents`**: Concurrency without shared state conflicts.
+- **`using-superpowers`**: Streamlined bootstrap with native Antigravity tool mappings (`references/antigravity-tools.md`).
+- **`writing-skills`**: Skill authoring and rigorous subagent-based testing.
 
-### 🛠️ Specialized Tooling (Anthropic Inspired)
-- **Webapp Testing**: Professional Playwright-based frontend verification.
-- **MCP Builder**: Guided creation of Model Context Protocol servers.
-- **Frontend Design**: Stunning, production-grade UI components with rich aesthetics.
-- **Web Artifacts**: Complex React/Tailwind/shadcn dashboard generation.
+### 🛠️ Specialized Engineering Skills
+- **`senior-fullstack`**: Scaffolding, architecture, and code quality analysis for fullstack web applications.
+- **`senior-backend`**: High-performance backend architectures, database design, and API optimization.
+- **`senior-architect`**: Scalable system design, architecture diagrams, and tech stack decision matrices.
+- **`webapp-testing`**: Professional Playwright-based frontend verification.
+- **`mcp-builder`**: Guided creation of Model Context Protocol servers.
+- **`frontend-design`**: Stunning, production-grade UI components with rich aesthetics.
+- **`web-artifacts-builder`**: Complex React/Tailwind/shadcn dashboard generation.
+- **`skill-creator`**: Interactive toolkit for crafting and packaging custom skills.
 
 ---
 
@@ -162,12 +175,11 @@ We've synthesized the best skills from across the agentic ecosystem:
 
 - [PROJECT_RULES.md](PROJECT_RULES.md): The "Constitution" of the Superpowers workflow.
 - [SUPERPOWER-STYLE.md](SUPERPOWER-STYLE.md): Standards for documentation and agent communication.
-- [Workflow Guideline](docs/GUIDELINE.md): **(NEW)** visual guide to the core methodology.
-- [Example Project](docs/examples/example-project/README.md): **(NEW)** End-to-end demonstration of the workflow in action.
+- [Workflow Guideline](docs/GUIDELINE.md): visual guide to the core methodology.
+- [Example Project](docs/examples/example-project/README.md): End-to-end demonstration of the workflow in action.
 - [PRD.md](PRD.md): The original Product Requirements Document for this integration.
 - [INSTALL.md](antigravity/INSTALL.md): Detailed installation guide for all environments.
 - `docs/plans/`: Recommended directory for all design and implementation artifacts.
-
 
 ---
 
@@ -176,16 +188,7 @@ We've synthesized the best skills from across the agentic ecosystem:
 1. **Never Skip Brainstorming**: Even for "simple" fixes, the `/brainstorm` phase prevents logic errors.
 2. **Aggressive Atomicity**: Keep tasks under 5 minutes. If it's longer, break it down.
 3. **Hard Proof Only**: Never accept "it should work." Require captured evidence.
-4. **Clean State Check**: Use `/help` or `/resume` to ensure the agent has loaded the process correctly at the start of a session.
-
----
-
-## 🌍 Integration with GSD for Antigravity
-
-Superpowers for Antigravity is designed to be **fully compatible** with the [GSD-for-Antigravity](https://github.com/toonight/get-shit-done-for-antigravity) methodology.
-
-- **Synergy**: Use GSD for high-level project management (`SPEC.md`, `ROADMAP.md`) and Superpowers for the low-level implementation cycle (`/brainstorm`, `/plan`).
-- **Shared Skills**: Both frameworks share core context-management and verification skills, ensuring a unified experience.
+4. **Clean State Check**: Use `/help` to ensure the agent has loaded the process correctly at the start of a session.
 
 ---
 
@@ -208,9 +211,9 @@ To allow users to just run `npx superpowers-for-antigravity`, you must publish t
 
 This project honors its roots and peers:
 
-1. **[Superpowers](https://github.com/obra/superpowers)** (Original): By **obra**. The pioneer of process-wrapped skills.
-2. **[GSD for Antigravity](https://github.com/toonight/get-shit-done-for-antigravity)**: By **toonight**. The primary architectural inspiration for the Antigravity adapter and `.agent` structure.
-3. **[Anthropic Skills](https://github.com/anthropics/skills)**: For the high-quality technical capability templates.
+1. **[Superpowers](https://github.com/obra/superpowers)** (Original): By **Jesse Vincent (obra)** and Prime Radiant. The pioneer of process-driven agentic software engineering.
+2. **[Google Antigravity](https://antigravity.google)**: Next-generation agentic coding platform and runtime.
+3. **[Anthropic Skills](https://github.com/anthropics/skills)**: For technical capability templates and patterns.
 
 ---
 
