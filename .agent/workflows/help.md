@@ -30,5 +30,5 @@ THE SUPERPOWERS PHILOSOPHY
 🔬 Evidence         Proof over claims
 
 ─────────────────────────────────────────────────────
-Docs: PROJECT_RULES.md, GSD-STYLE.md
+Docs: PROJECT_RULES.md, SUPERPOWER-STYLE.md
 ```
