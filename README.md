@@ -1,6 +1,4 @@
-<div align="center">
-
-<img src="https://img.shields.io/badge/Superpowers-for_Google_Antigravity-FF6D00?style=for-the-badge&logoColor=white" alt="Superpowers for Google Antigravity" />
+<div align="center" markdown="1">
 
 # 🚀 Superpowers for Google Antigravity
 
@@ -20,7 +18,7 @@
 
 <br/>
 
-[Quickstart](#-getting-started-in-30-seconds) • [Daily Developer Playbook](#-daily-developer-playbook) • [Skills Library](#-complete-24-skill-library) • [Prompt Templates](#-copy-paste-daily-prompt-templates) • [Contributing](#-contributing--community) • [FAQ](#-frequently-asked-questions-aeo)
+[⚡ Quickstart](#-getting-started-in-30-seconds) • [🎮 Daily Playbook](#-daily-developer-playbook) • [🧬 Skills Library](#-complete-24-skill-library) • [📋 Prompt Templates](#-copy-paste-daily-prompt-templates) • [🧪 Hard Proof](#-strict-verification--hard-proof-protocol) • [🤝 Contributing](#-contributing--community) • [❓ FAQ](#-frequently-asked-questions-aeo)
 
 </div>
 
@@ -400,7 +398,7 @@ This project builds upon the pioneering work of the open-source agentic engineer
 
 ---
 
-<div align="center">
+<div align="center" markdown="1">
 
 **Maintained with ❤️ by [Sri Satya Lokesh](https://github.com/SriSatyaLokesh)**
 
