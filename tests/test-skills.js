@@ -30,6 +30,7 @@ const EXPECTED_CUSTOM_SKILLS = [
   'senior-architect',
   'senior-backend',
   'senior-fullstack',
+  'seo-geo-aeo',
   'skill-creator',
   'web-artifacts-builder',
   'webapp-testing'
