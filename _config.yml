@@ -1,0 +1,17 @@
+# GitHub Pages Configuration with Jekyll Minimal Theme
+# Theme: https://github.com/pages-themes/minimal
+theme: jekyll-theme-minimal
+
+title: Superpowers for Google Antigravity
+description: The definitive Superpowers SOP & 24-skill library for Google Antigravity (agy). Design-first brainstorming, atomic plans, TDD execution, and production engineering workflows.
+
+# Layout Settings
+show_downloads: true
+google_analytics:
+
+# Markdown Settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
