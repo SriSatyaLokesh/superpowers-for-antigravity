@@ -1,7 +1,7 @@
 {
     "name": "superpowers-for-antigravity",
-    "version": "1.0.0",
-    "description": "Standard Operating Procedure (SOP) and development methodology for agentic software engineering on Google Antigravity.",
+    "version": "1.1.0",
+    "description": "The definitive Superpowers SOP & 23-skill library for Google Antigravity (agy). Design-first brainstorming, atomic plans, TDD execution, and production engineering workflows.",
     "main": "scripts/init.js",
     "bin": {
         "superpower-init": "scripts/init.js"
@@ -15,11 +15,22 @@
     },
     "keywords": [
         "antigravity",
+        "google-antigravity",
+        "antigravity-skills",
+        "agy",
+        "superpowers",
         "agentic-workflows",
+        "ai-coding",
+        "pair-programming",
         "tdd",
+        "test-driven-development",
         "brainstorming",
-        "productivity",
-        "gemini"
+        "software-architecture",
+        "fullstack",
+        "gemini",
+        "mcp",
+        "playwright",
+        "productivity"
     ],
     "author": "Sri Satya Lokesh",
     "license": "MIT",
