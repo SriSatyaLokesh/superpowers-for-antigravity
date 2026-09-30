@@ -15,3 +15,20 @@ kramdown:
   input: GFM
   hard_wrap: false
   syntax_highlighter: rouge
+
+# Exclude internal non-website assets & documentation to prevent Liquid parsing errors
+exclude:
+  - .agent/
+  - .gemini/
+  - adapters/
+  - antigravity/
+  - docs/
+  - examples/
+  - tests/
+  - scripts/
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
