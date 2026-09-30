@@ -2,3 +2,5 @@
 .private-journal/
 .claude/
 .DS_Store
+/examples/
+.task-note-data.json
