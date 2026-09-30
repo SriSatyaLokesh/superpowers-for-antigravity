@@ -4,12 +4,12 @@
 
 # 🚀 Superpowers for Google Antigravity
 
-### The Definitive Agentic Software Engineering SOP & 23-Skill Library for Google Antigravity (`agy`)
+### The Definitive Agentic Software Engineering SOP & 24-Skill Library for Google Antigravity (`agy`)
 
-[![Version](https://img.shields.io/badge/version-1.1.0-00C853?style=flat-square&logo=git)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.2.0-00C853?style=flat-square&logo=git)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-2196F3?style=flat-square)](LICENSE)
 [![Upstream](https://img.shields.io/badge/upstream-obra%2Fsuperpowers%20v6.4.2-7B2D8E?style=flat-square)](https://github.com/obra/superpowers)
-[![Skills Catalog](https://img.shields.io/badge/skills-23%20production%20skills-FF6D00?style=flat-square)](#-complete-23-skill-library)
+[![Skills Catalog](https://img.shields.io/badge/skills-24%20production%20skills-FF6D00?style=flat-square)](#-complete-24-skill-library)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-black?style=flat-square)](#-getting-started-in-30-seconds)
 [![Runtime](https://img.shields.io/badge/runtime-Antigravity%20IDE%20%26%20agy%20CLI-4285F4?style=flat-square&logo=google)](https://antigravity.google)
 
@@ -20,14 +20,14 @@
 
 <br/>
 
-[Quickstart](#-getting-started-in-30-seconds) • [Daily Developer Playbook](#-daily-developer-playbook) • [Skills Library](#-complete-23-skill-library) • [Prompt Templates](#-copy-paste-daily-prompt-templates) • [Comparison](#-why-superpowers-vs-standard-ai-prompting) • [FAQ](#-frequently-asked-questions-aeo)
+[Quickstart](#-getting-started-in-30-seconds) • [Daily Developer Playbook](#-daily-developer-playbook) • [Skills Library](#-complete-24-skill-library) • [Prompt Templates](#-copy-paste-daily-prompt-templates) • [Contributing](#-contributing--community) • [FAQ](#-frequently-asked-questions-aeo)
 
 </div>
 
 ---
 
 > ### 💡 What is Superpowers for Google Antigravity?
-> **Superpowers for Google Antigravity** is a battle-tested agentic software engineering Standard Operating Procedure (SOP) and modular 23-skill ecosystem built specifically for **Google Antigravity (agy)**. Based on Jesse Vincent's seminal [obra/superpowers](https://github.com/obra/superpowers) (v6.4.2) and tailored for Google Antigravity's dual-engine architecture, it prevents AI agents from hallucinating, scope-creeping, or writing untested code by enforcing disciplined software development lifecycles: **Socratic design refinement**, **atomic goal-backward planning**, **strict Red-Green-Refactor TDD**, **isolated git worktrees**, and **forensic proof before completion**.
+> **Superpowers for Google Antigravity** is a battle-tested agentic software engineering Standard Operating Procedure (SOP) and modular 24-skill ecosystem built specifically for **Google Antigravity (agy)**. Based on Jesse Vincent's seminal [obra/superpowers](https://github.com/obra/superpowers) (v6.4.2) and tailored for Google Antigravity's dual-engine architecture, it prevents AI agents from hallucinating, scope-creeping, or writing untested code by enforcing disciplined software development lifecycles: **Socratic design refinement**, **atomic goal-backward planning**, **strict Red-Green-Refactor TDD**, **isolated git worktrees**, and **forensic proof before completion**.
 
 ---
 
@@ -43,10 +43,11 @@
   - [The 5-Phase Agentic Lifecycle](#the-5-phase-agentic-lifecycle)
   - [Mission Control Slash Commands](#mission-control-slash-commands)
   - [Copy-Paste Daily Prompt Templates](#-copy-paste-daily-prompt-templates)
-- [🧬 Complete 23-Skill Library](#-complete-23-skill-library)
+- [🧬 Complete 24-Skill Library](#-complete-24-skill-library)
   - [Core Superpowers (15 Skills synced with upstream v6.4.2)](#1-core-superpowers-15-skills)
-  - [Specialized Engineering Skills (8 Skills)](#2-specialized-engineering-skills-8-skills)
+  - [Specialized Engineering Skills (9 Skills)](#2-specialized-engineering-skills-9-skills)
 - [🧪 Strict Verification & Hard Proof Protocol](#-strict-verification--hard-proof-protocol)
+- [🤝 Contributing & Community](#-contributing--community)
 - [❓ Frequently Asked Questions (FAQ)](#-frequently-asked-questions-aeo)
 - [🤝 Credits & Upstream Attribution](#-credits--upstream-attribution)
 
@@ -218,6 +219,7 @@ Type these directly in your Google Antigravity chat window:
 | **`/execute`** | ⚙️ The Builder | Runs implementation plan using subagent orchestration or inline TDD execution. |
 | **`/review`** | 🔍 The Reviewer | Adversarial code reviewer checking adherence to design, clean architecture, and test coverage. |
 | **`/debug`** | 🐛 The Investigator | 4-phase systematic debugging: isolate, reproduce with failing test, fix, and prove. |
+| **`/audit`** | 🌐 Search & AI Auditor | Audits websites for SEO, GEO (AI search engines), and AEO (featured snippets) with agency-grade reports. |
 | **`/help`** | ❓ Mission Control | Displays the active Antigravity Superpowers dashboard, skills, and environment health. |
 
 ---
@@ -250,9 +252,9 @@ Do not propose code changes yet. Execute 4-phase systematic debugging: formulate
 
 ---
 
-## 🧬 Complete 23-Skill Library
+## 🧬 Complete 24-Skill Library
 
-Antigravity Superpowers includes **23 production-ready skills**: 15 upstream core skills (synced with `obra/superpowers` v6.4.2) + 8 custom engineering skills.
+Antigravity Superpowers includes **24 production-ready skills**: 15 upstream core skills (synced with `obra/superpowers` v6.4.2) + 9 custom engineering skills.
 
 ```
 .agent/skills/
@@ -278,6 +280,7 @@ Antigravity Superpowers includes **23 production-ready skills**: 15 upstream cor
     ├── senior-architect/             # Scalable system design, C4 diagrams, ADRs
     ├── senior-backend/               # Go/Node/Python DB optimization & robust APIs
     ├── senior-fullstack/              # React, Next.js, Node, GraphQL, Postgres
+    ├── seo-geo-aeo/                   # Full-featured SEO, GEO (AI search), and AEO website audit tool
     ├── skill-creator/                 # Guided packaging of custom skills
     ├── web-artifacts-builder/         # Elaborate React/Tailwind/shadcn dashboards
     └── webapp-testing/                # Playwright-based frontend browser automation
@@ -303,7 +306,7 @@ Antigravity Superpowers includes **23 production-ready skills**: 15 upstream cor
 | **`using-superpowers`** | Environment bootstrap | Antigravity-native tool bridge (`references/antigravity-tools.md`). |
 | **`writing-skills`** | Meta-development | Creation, formatting, and subagent testing of new skills. |
 
-### 2. Specialized Engineering Skills (8 Skills)
+### 2. Specialized Engineering Skills (9 Skills)
 
 | Skill Name | Domain | Primary Capabilities |
 | :--- | :--- | :--- |
@@ -314,6 +317,7 @@ Antigravity Superpowers includes **23 production-ready skills**: 15 upstream cor
 | **`web-artifacts-builder`** | Rich Artifacts | Multi-component standalone dashboards using React, Tailwind, and shadcn/ui. |
 | **`webapp-testing`** | E2E Testing | Browser automation, visual regression, and log inspection using Playwright. |
 | **`mcp-builder`** | Protocol Tools | High-quality Model Context Protocol (MCP) server creation in Python or TypeScript. |
+| **`seo-geo-aeo`** | Search & AI Visibility | Deep SEO, Generative Engine Optimization (ChatGPT/Perplexity/Gemini), and Answer Engine Optimization (featured snippets) audits with downloadable reports. |
 | **`skill-creator`** | Skill Authoring | Step-by-step authoring and testing of custom enterprise skills. |
 
 ---
@@ -336,6 +340,18 @@ $ node --test tests/greeting.test.js
 ℹ fail 0
 "All 2 tests passed. Verified on Node v20.10.0. Ready for review."
 ```
+
+---
+
+## 🤝 Contributing & Community
+
+We welcome contributions from the global agentic software engineering community! Whether you are proposing a new specialized skill, refining existing prompts, or improving developer documentation:
+
+- 📖 **Contributor Guidelines**: Read our comprehensive [CONTRIBUTING.md](CONTRIBUTING.md) guide.
+- 🛡️ **Code of Conduct**: We adhere to the [Contributor Covenant](CODE_OF_CONDUCT.md).
+- 💡 **Propose a Skill**: Use our [Skill Proposal Template](.github/ISSUE_TEMPLATE/skill_proposal.md) to pitch a new skill with clear YAML frontmatter and automated test verification.
+- 🐛 **Report a Bug**: Submit forensic reports with transcripts and logs via our [Bug Report Template](.github/ISSUE_TEMPLATE/bug_report.md).
+- 🚀 **Pull Requests**: Follow conventional commits (`feat:`, `fix:`, `docs:`, `test:`) and ensure all PRs are rebased on latest `main` with `npm test` passing 100%.
 
 ---
 
@@ -365,7 +381,7 @@ The agent must present captured terminal output of both the failing run and the 
 Upstream `obra/superpowers` was originally architected for Claude/OpenCode harnesses. This repository:
 1. Native-ports all 15 upstream skills to **Google Antigravity (`agy`)**, mapping tools to Antigravity primitives (`invoke_subagent`, `run_command`, `replace_file_content`).
 2. Tracks upstream release **v6.4.2** (`8ca22db`), including `diagnosing-superpowers`, `writing-good-tests.md`, and plan-scoped subagent workspaces.
-3. Expands the methodology with **8 production engineering skills** (`senior-architect`, `senior-backend`, `webapp-testing`, `mcp-builder`, `frontend-design`, etc.).
+3. Expands the methodology with **9 specialized engineering skills** (`seo-geo-aeo`, `senior-architect`, `senior-backend`, `senior-fullstack`, `webapp-testing`, `mcp-builder`, `frontend-design`, `web-artifacts-builder`, `skill-creator`).
 4. Adds automated cross-platform installation scripts (`scripts/init.js`, `npx` runner) for Windows, macOS, and Linux.
 
 ### Does Superpowers work on Windows, macOS, and Linux?
@@ -379,6 +395,7 @@ This project builds upon the pioneering work of the open-source agentic engineer
 
 - **[Jesse Vincent (obra)](https://github.com/obra)** & **Prime Radiant**: Creators of the original [obra/superpowers](https://github.com/obra/superpowers) methodology.
 - **[Google Antigravity Team](https://antigravity.google)**: Creators of the next-generation agentic coding platform and `agy` CLI runtime.
+- **[Alex Labat](https://github.com/)**: Creator of the SEO/GEO/AEO audit framework adapted into the Antigravity `seo-geo-aeo` skill.
 - **[Anthropic](https://github.com/anthropics/skills)**: Architecture and capability patterns for modular LLM agent skills.
 
 ---

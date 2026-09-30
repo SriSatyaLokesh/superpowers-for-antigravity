@@ -1,7 +1,7 @@
 {
     "name": "superpowers-for-antigravity",
-    "version": "1.1.0",
-    "description": "The definitive Superpowers SOP & 23-skill library for Google Antigravity (agy). Design-first brainstorming, atomic plans, TDD execution, and production engineering workflows.",
+    "version": "1.2.0",
+    "description": "The definitive Superpowers SOP & 24-skill library for Google Antigravity (agy). Design-first brainstorming, atomic plans, TDD execution, and production engineering workflows.",
     "main": "scripts/init.js",
     "bin": {
         "superpower-init": "scripts/init.js"
@@ -30,6 +30,10 @@
         "gemini",
         "mcp",
         "playwright",
+        "seo",
+        "geo",
+        "aeo",
+        "website-audit",
         "productivity"
     ],
     "author": "Sri Satya Lokesh",

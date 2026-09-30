@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2026-09-30
+
+### SEO, GEO & AEO Skill Integration & Open-Source Contribution Framework
+
+#### Added
+- **`seo-geo-aeo` Skill**: Full-featured website audit engine analyzing technical on-page SEO, Generative Engine Optimization (GEO for ChatGPT Search, Perplexity, and Gemini), and Answer Engine Optimization (AEO for featured snippets and voice search).
+- **Mission Control Command**: Added `/audit` slash command shortcut for initiating instant Quick or Full website audits.
+- **Open-Source Contribution Infrastructure**:
+  - `CONTRIBUTING.md`: Comprehensive contributor guidelines, skill authoring standards, and TDD workflow instructions.
+  - `CODE_OF_CONDUCT.md`: Contributor Covenant v2.1 adoption.
+  - `.github/ISSUE_TEMPLATE/`: Added structured templates for `bug_report.md`, `skill_proposal.md`, and `feature_request.md`.
+  - `.github/PULL_REQUEST_TEMPLATE.md`: Standardized PR checklist requiring zero-conflict rebase on `main` and hard terminal test proof.
+- **24-Skill Catalog**: Expanded production skill library to 24 skills (15 core + 9 specialized engineering skills).
+
+#### Credits
+- Attribution to **Alex Labat** for the underlying SEO/GEO/AEO audit methodology adapted for Google Antigravity.
+
 ## [1.1.0] - 2026-09-30
 
 ### Upstream Synchronization (obra/superpowers v6.4.2) & Focus Streamlining
