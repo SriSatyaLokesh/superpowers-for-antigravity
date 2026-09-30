@@ -7,7 +7,7 @@
         "superpower-init": "scripts/init.js"
     },
     "scripts": {
-        "test": "node tests/test-skills.js && node tests/test-init.js"
+        "test": "node tests/test-skills.js && node tests/test-init.js && node tests/test-readme.js"
     },
     "repository": {
         "type": "git",

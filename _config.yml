@@ -15,6 +15,7 @@ kramdown:
   input: GFM
   hard_wrap: false
   syntax_highlighter: rouge
+  parse_block_html: true
 
 # Exclude internal non-website assets & documentation to prevent Liquid parsing errors
 exclude:
