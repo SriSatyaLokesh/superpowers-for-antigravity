@@ -1,37 +1,44 @@
 # Installing Superpowers for Antigravity
 
-This guide explains how to install Superpowers specifically into your project's local directory or globally on your machine.
+This guide explains how to install Superpowers into a project's workspace, globally on your machine, or as a native Antigravity plugin.
 
 ---
 
 ## ⚡ Quick Install (Recommended)
-The fastest way to install Superpowers into any project is via `npx`. This automatically downloads the latest library and sets up everything in your current directory.
+
+Install Superpowers as a native Antigravity plugin from this repository:
 
 ```bash
-# Run this from your project root
-npx github:SriSatyaLokesh/superpowers-for-antigravity
+agy plugin install https://github.com/SriSatyaLokesh/superpowers-for-antigravity
+```
+
+Antigravity discovers the skills from the plugin manifest in `.antigravity-plugin/plugin.json`. Reinstall with the same command to update.
+
+Verify:
+
+```bash
+agy plugin list
+agy plugin validate .
 ```
 
 ---
 
-## 🏗️ Local Installation (Manual)
-If you prefer not to use `npx`, you can manually copy the engineering rules and skills into your repository.
+## 🏗️ Workspace Installation (Manual)
+
+Workspace skills live in `.agents/skills/`. That is the default path Antigravity scans, and the only path the `agy` CLI scans. The older `.agent/skills` layout is kept only for backward compatibility in the Antigravity App.
 
 ### 🪟 Windows (PowerShell)
 Run these commands from the root of your project:
 
 ```powershell
-# 1. Download Superpowers to a temporary staging folder
 git clone https://github.com/SriSatyaLokesh/superpowers-for-antigravity.git powers-staging
 
-# 2. Copy core components into your project's root directory (.\)
-xcopy /E /I powers-staging\.agent .agent
-xcopy /E /I powers-staging\.gemini .gemini
+xcopy /E /I powers-staging\.agents .agents
 xcopy /E /I powers-staging\adapters adapters
 copy powers-staging\PROJECT_RULES.md .\
 copy powers-staging\SUPERPOWER-STYLE.md .\
+copy powers-staging\GEMINI.md .\
 
-# 3. Remove the staging folder
 Remove-Item -Path "powers-staging" -Recurse -Force
 ```
 
@@ -39,57 +46,58 @@ Remove-Item -Path "powers-staging" -Recurse -Force
 Run these from your project root:
 
 ```bash
-# 1. Download Superpowers to a temporary staging folder
 git clone https://github.com/SriSatyaLokesh/superpowers-for-antigravity.git powers-staging
 
-# 2. Copy core components into your project's root directory (./)
-cp -r powers-staging/.agent ./
-cp -r powers-staging/.gemini ./
+cp -r powers-staging/.agents ./
 cp -r powers-staging/adapters ./
 cp powers-staging/PROJECT_RULES.md ./
 cp powers-staging/SUPERPOWER-STYLE.md ./
+cp powers-staging/GEMINI.md ./
 
-# 3. Remove the staging folder
 rm -rf powers-staging
 ```
+
+> If your project already has a `GEMINI.md`, prefer `npx github:SriSatyaLokesh/superpowers-for-antigravity`. The npx installer appends a marked Superpowers block instead of replacing the file.
 
 ---
 
 ## 🌍 Global Installation
-This makes Superpowers available to Antigravity in **every project** you open on your machine without needing to copy files into every repo.
+
+Global skills in `~/.gemini/config/skills/` are recognized by the Antigravity App, the Antigravity IDE, and the `agy` CLI.
 
 ### 🪟 Windows (PowerShell)
 ```powershell
-# 1. Clone to a permanent location in your user profile
 git clone https://github.com/SriSatyaLokesh/superpowers-for-antigravity.git "$env:USERPROFILE\.agents\superpowers"
 
-# 2. Create the global skills link
-New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills"
-cmd /c mklink /J "$env:USERPROFILE\.agents\skills\superpowers" "$env:USERPROFILE\.agents\superpowers\.agent\skills"
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.gemini\config\skills" | Out-Null
+Copy-Item -Recurse -Force "$env:USERPROFILE\.agents\superpowers\.agents\skills\*" "$env:USERPROFILE\.gemini\config\skills\"
 ```
 
 ### 🐧 Linux / Mac (Bash)
 ```bash
-# 1. Clone to your home directory
 git clone https://github.com/SriSatyaLokesh/superpowers-for-antigravity.git ~/.agents/superpowers
 
-# 2. Create the global skills link
-mkdir -p ~/.agents/skills
-ln -s ~/.agents/superpowers/.agent/skills ~/.agents/skills/superpowers
+mkdir -p ~/.gemini/config/skills
+cp -r ~/.agents/superpowers/.agents/skills/* ~/.gemini/config/skills/
 ```
 
 ---
 
 ## 🔍 Understanding the Paths
 
--   **`./` or `.\`**: This represents your **current project directory**. When you run the copy commands, Superpowers is installed directly into your open project.
--   **Staging Folders (`powers-staging`)**: We clone into a temporary folder first because running `git clone` directly into an existing project would cause a "git-within-git" conflict. We copy only what we need and then delete the temporary folder.
--   **`.agent` folder**: This is where Antigravity looks for custom **Skills** and **Workflows**.
--   **`.gemini` folder**: This contains the core instructions that tell the AI how to use Superpowers.
+- **`.agents/skills/`**: Workspace skills. Antigravity scans this directory automatically and turns every skill into a slash command.
+- **`.agents/workflows/`**: Legacy slash-command aliases (`/brainstorm`, `/plan`, …). Skills are the preferred mechanism; workflows remain for older surfaces.
+- **`GEMINI.md`**: The workspace bootstrap. It uses `@` references so the agent reads `using-superpowers`, the Antigravity tool bindings, `PROJECT_RULES.md`, and `SUPERPOWER-STYLE.md`.
+- **`PROJECT_RULES.md`**: The process constitution.
+- **`SUPERPOWER-STYLE.md`**: Communication and documentation standards.
 
 ## 🚀 Verify Installation
 
-Start your Antigravity agent and type:
-> `/help`
+Start the Antigravity CLI in the project and list the skills:
 
-If you see the **Mission Control Overview**, the installation was successful!
+```bash
+agy
+/skills
+```
+
+You should see the 24 Superpowers skills. In the Antigravity App, open the Customizations menu in the agent side panel.

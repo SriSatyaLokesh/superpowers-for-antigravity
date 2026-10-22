@@ -59,11 +59,11 @@ The agentic coding space is moving towards standardizing "skills" and "workflows
 
 -   **Multi-Mode Installation Support**:
     -   **Global**: Centralized skills library accessible across projects via user-profile symlinking.
-    -   **Local**: Full copy of skills/workflows into project-specific `.agent/` directory for isolation.
-    -   **Hybrid**: Project-local configuration (`.gemini/`) referencing a global Superpowers installation.
+    -   **Local**: Full copy of skills/workflows into project-specific `.agents/` directory for isolation.
+    -   **Hybrid**: Project-local configuration (`GEMINI.md`) referencing a global Superpowers installation.
 -   **Antigravity Integration Layer**:
-    -   `.gemini` folder for Gemini-specific rules and adapters.
-    -   `.agent/skills` and `.agent/workflows` structure mapping for native discovery.
+    -   `GEMINI.md` bootstrap plus the optional `adapters/` guidance for Gemini-specific rules.
+    -   `.agents/skills` and `.agents/workflows` structure mapping for native discovery.
     -   `INSTALL.md` with cross-platform (Bash/PowerShell) instructions.
 -   **Tool Mapping**: Utilizing Antigravity native tools like `run_command` (with `SafeToAutoRun`) and `browser_subagent`.
 
@@ -138,7 +138,7 @@ For each persona:
 
 -   Assumption: Antigravity follows the standard folder-based skill discovery pattern.
 -   Dependency: User must have Git installed to clone/update.
--   Dependency: Antigravity version must support `.agent/skills` and `.agent/workflows`.
+-   Dependency: Antigravity version must support `.agents/skills` and `.agents/workflows`.
 
 ------------------------------------------------------------------------
 

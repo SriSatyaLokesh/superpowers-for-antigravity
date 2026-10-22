@@ -19,14 +19,19 @@ kramdown:
 
 # Exclude internal non-website assets & documentation to prevent Liquid parsing errors
 exclude:
-  - .agent/
-  - .gemini/
+  - .agents/
+  - .claude-plugin/
+  - .antigravity-plugin/
   - adapters/
   - antigravity/
+  - assets/
   - docs/
   - examples/
+  - hooks/
+  - skills/
   - tests/
   - scripts/
+  - GEMINI.md
   - node_modules/
   - package.json
   - package-lock.json

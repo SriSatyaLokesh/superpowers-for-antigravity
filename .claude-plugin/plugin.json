@@ -1,0 +1,22 @@
+{
+  "name": "superpowers",
+  "description": "Superpowers for Google Antigravity: brainstorming, planning, TDD, debugging, and delivery workflows for coding agents",
+  "version": "2.0.0",
+  "author": {
+    "name": "Jesse Vincent",
+    "email": "jesse@fsck.com"
+  },
+  "homepage": "https://github.com/SriSatyaLokesh/superpowers-for-antigravity",
+  "repository": "https://github.com/SriSatyaLokesh/superpowers-for-antigravity",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "tdd",
+    "debugging",
+    "collaboration",
+    "best-practices",
+    "workflows",
+    "antigravity",
+    "agy"
+  ]
+}
