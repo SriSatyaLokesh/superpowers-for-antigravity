@@ -1,13 +1,15 @@
 {
     "name": "superpowers-for-antigravity",
-    "version": "1.2.0",
-    "description": "The definitive Superpowers SOP & 24-skill library for Google Antigravity (agy). Design-first brainstorming, atomic plans, TDD execution, and production engineering workflows.",
+    "version": "2.0.0",
+    "description": "Upstream obra/superpowers v7.0.1 plus Antigravity-native skills — a 24-skill SOP for Claude Code and the Google Antigravity (agy) CLI.",
     "main": "scripts/init.js",
     "bin": {
         "superpower-init": "scripts/init.js"
     },
     "scripts": {
-        "test": "node tests/test-skills.js && node tests/test-init.js && node tests/test-readme.js"
+        "sync:skills": "node scripts/sync-skills.js",
+        "check:skills": "node scripts/sync-skills.js --check",
+        "test": "node tests/test-skills.js && node tests/test-init.js && node tests/test-readme.js && node scripts/sync-skills.js --check"
     },
     "repository": {
         "type": "git",
@@ -18,7 +20,11 @@
         "google-antigravity",
         "antigravity-skills",
         "agy",
+        "agy-cli",
+        "claude-code",
         "superpowers",
+        "obra-superpowers",
+        "agent-skills",
         "agentic-workflows",
         "ai-coding",
         "pair-programming",

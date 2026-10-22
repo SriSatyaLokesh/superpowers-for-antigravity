@@ -29,7 +29,7 @@ This project adheres to the [Contributor Covenant](CODE_OF_CONDUCT.md). By parti
 ## 💡 How Can You Contribute?
 
 1. **Suggest a New Skill:** Propose new agentic capabilities (e.g., cloud infrastructure, security audits, database migration).
-2. **Improve Existing Skills:** Enhance prompts, edge-case coverage, or tool integration in `.agent/skills/`.
+2. **Improve Existing Skills:** Enhance prompts, edge-case coverage, or tool integration in `.agents/skills/`.
 3. **Enhance Documentation:** Improve guides, cheat sheets, or prompt templates.
 4. **Report Bugs:** Open a forensic bug report with transcripts and error logs.
 
@@ -54,18 +54,20 @@ Before making any changes, verify that all test suites pass:
 npm test
 ```
 This runs:
-- `tests/test-skills.js`: Verifies skill directory structure, YAML frontmatter syntax, absence of deprecated skills, and core feature integrity.
+- `tests/test-skills.js`: Verifies skill directory structure, YAML frontmatter syntax, upstream feature markers, and both harness manifests.
 - `tests/test-init.js`: Tests the cross-platform project initializer in an isolated temporary environment.
+- `tests/test-readme.js`: Verifies the README and Jekyll configuration.
+- `scripts/sync-skills.js --check`: Fails when `.agents/skills/` drifts from the canonical `skills/` tree.
 
 ---
 
 ## 🧬 Skill Authoring Standards
 
-When adding a new skill to `.agent/skills/<skill-name>/`:
+When adding a new skill to `.agents/skills/<skill-name>/`:
 
 ### 1. Directory Structure
 ```
-.agent/skills/<skill-name>/
+.agents/skills/<skill-name>/
 ├── SKILL.md                 # Required: Main instruction file with YAML frontmatter
 ├── references/              # Optional: In-depth documentation, APIs, cheat sheets
 ├── scripts/                 # Optional: Helper CLI utilities or validation scripts
@@ -89,6 +91,8 @@ description: >
 - **Evidence Before Assertion:** Mandate that agents produce terminal output, verifiable test logs, or concrete artifacts.
 - **Cross-Platform:** Ensure scripts work seamlessly on Windows (PowerShell/cmd), macOS (zsh), and Linux (bash).
 - **Test Registration:** Register your skill in `tests/test-skills.js` under `EXPECTED_CUSTOM_SKILLS`.
+
+> **Upstream core skills are not edited by hand.** `skills/` is kept byte-for-byte identical to `obra/superpowers`. Fixes to those skills belong upstream. After importing a new upstream release with `git checkout upstream/main -- skills`, run `npm run sync:skills` to regenerate `.agents/skills/`.
 
 ---
 

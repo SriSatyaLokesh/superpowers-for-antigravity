@@ -2,14 +2,14 @@
 
 # 🚀 Superpowers for Google Antigravity
 
-### The Definitive Agentic Software Engineering SOP & 24-Skill Library for Google Antigravity (`agy`)
+### The 24-Skill Agentic Engineering SOP — synced with upstream `obra/superpowers` v7.0.1 and ready for both Claude Code and the Antigravity `agy` CLI
 
-[![Version](https://img.shields.io/badge/version-1.2.0-00C853?style=flat-square&logo=git)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.0.0-00C853?style=flat-square&logo=git)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-2196F3?style=flat-square)](LICENSE)
-[![Upstream](https://img.shields.io/badge/upstream-obra%2Fsuperpowers%20v6.4.2-7B2D8E?style=flat-square)](https://github.com/obra/superpowers)
+[![Upstream](https://img.shields.io/badge/upstream-obra%2Fsuperpowers%20v7.0.1-7B2D8E?style=flat-square)](https://github.com/obra/superpowers)
 [![Skills Catalog](https://img.shields.io/badge/skills-24%20production%20skills-FF6D00?style=flat-square)](#-complete-24-skill-library)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-black?style=flat-square)](#-getting-started-in-30-seconds)
-[![Runtime](https://img.shields.io/badge/runtime-Antigravity%20IDE%20%26%20agy%20CLI-4285F4?style=flat-square&logo=google)](https://antigravity.google)
+[![Claude Code](https://img.shields.io/badge/harness-Claude%20Code-D97757?style=flat-square)](https://claude.com/claude-code)
+[![Antigravity](https://img.shields.io/badge/harness-Antigravity%20%28agy%29-4285F4?style=flat-square&logo=google)](https://antigravity.google)
 
 <br/>
 
@@ -18,105 +18,140 @@
 
 <br/>
 
-[⚡ Quickstart](#-getting-started-in-30-seconds) • [🎮 Daily Playbook](#-daily-developer-playbook) • [🧬 Skills Library](#-complete-24-skill-library) • [📋 Prompt Templates](#-copy-paste-daily-prompt-templates) • [🧪 Hard Proof](#-strict-verification--hard-proof-protocol) • [🤝 Contributing](#-contributing--community) • [❓ FAQ](#-frequently-asked-questions-aeo)
+[⚡ Quickstart](#-getting-started-in-30-seconds) • [🤖 Claude Code](#-using-with-claude-code) • [🛸 Antigravity CLI](#-using-with-the-antigravity-cli-agy) • [🧬 Skills Library](#-complete-24-skill-library) • [🧪 Hard Proof](#-strict-verification--hard-proof-protocol) • [❓ FAQ](#-frequently-asked-questions-aeo)
 
 </div>
 
 ---
 
 > ### 💡 What is Superpowers for Google Antigravity?
-> **Superpowers for Google Antigravity** is a battle-tested agentic software engineering Standard Operating Procedure (SOP) and modular 24-skill ecosystem built specifically for **Google Antigravity (agy)**. Based on Jesse Vincent's seminal [obra/superpowers](https://github.com/obra/superpowers) (v6.4.2) and tailored for Google Antigravity's dual-engine architecture, it prevents AI agents from hallucinating, scope-creeping, or writing untested code by enforcing disciplined software development lifecycles: **Socratic design refinement**, **atomic goal-backward planning**, **strict Red-Green-Refactor TDD**, **isolated git worktrees**, and **forensic proof before completion**.
+> **Superpowers for Google Antigravity** packages Jesse Vincent's [obra/superpowers](https://github.com/obra/superpowers) methodology as a 24-skill library that works in **Claude Code** and the **Google Antigravity CLI (`agy`)**. It prevents agents from hallucinating, scope-creeping, or writing untested code by enforcing **Socratic design**, **atomic planning**, **strict Red-Green-Refactor TDD**, **isolated git worktrees**, and **evidence before assertion**.
+>
+> Version **2.0.0** tracks upstream **v7.0.1** exactly: the rebuilt `brainstorming` skill, compaction-resilient `subagent-driven-development` and `writing-skills`, and the native Antigravity plugin manifest.
 
 ---
 
 ## 📑 Table of Contents
 
-- [Why Superpowers? (The Problem)](#-why-superpowers-the-problem)
-- [Why Superpowers vs Standard AI Prompting?](#-why-superpowers-vs-standard-ai-prompting)
+- [🆕 What's New in 2.0.0](#-whats-new-in-200)
 - [⚡ Getting Started in 30 Seconds](#-getting-started-in-30-seconds)
-  - [Automatic Installation via NPX](#automatic-installation-recommended)
-  - [Local Manual Installation (Windows / macOS / Linux)](#local-manual-installation)
-  - [Global Machine-Wide Installation](#global-machine-wide-installation)
+  - [Antigravity CLI (recommended)](#antigravity-cli-recommended)
+  - [Claude Code](#-using-with-claude-code)
+  - [Workspace install via npx](#workspace-install-via-npx)
+  - [Manual install](#manual-install)
+  - [Global install](#global-install)
 - [🎮 Daily Developer Playbook](#-daily-developer-playbook)
-  - [The 5-Phase Agentic Lifecycle](#the-5-phase-agentic-lifecycle)
-  - [Mission Control Slash Commands](#mission-control-slash-commands)
-  - [Copy-Paste Daily Prompt Templates](#-copy-paste-daily-prompt-templates)
 - [🧬 Complete 24-Skill Library](#-complete-24-skill-library)
-  - [Core Superpowers (15 Skills synced with upstream v6.4.2)](#1-core-superpowers-15-skills)
-  - [Specialized Engineering Skills (9 Skills)](#2-specialized-engineering-skills-9-skills)
+- [🗂️ Repository Layout](#️-repository-layout)
 - [🧪 Strict Verification & Hard Proof Protocol](#-strict-verification--hard-proof-protocol)
-- [🤝 Contributing & Community](#-contributing--community)
-- [❓ Frequently Asked Questions (FAQ)](#-frequently-asked-questions-aeo)
+- [🔄 Keeping Upstream In Sync](#-keeping-upstream-in-sync)
+- [❓ Frequently Asked Questions (AEO)](#-frequently-asked-questions-aeo)
 - [🤝 Credits & Upstream Attribution](#-credits--upstream-attribution)
 
 ---
 
-## 🧠 Why Superpowers? (The Problem)
+## 🆕 What's New in 2.0.0
 
-Modern AI coding agents (LLMs) are extraordinarily capable, but when left unconstrained, they exhibit predictable, costly failure modes:
-
-| Unconstrained Agent Failure | Superpowers SOP Solution |
+| Area | Change |
 | :--- | :--- |
-| **Premature Coding:** Dives straight into implementation without understanding architectural trade-offs. | **`/brainstorm` & Socratic Discovery:** Forces requirements interviews and architectural design documents before any code is generated. |
-| **Scope Creep & Over-Engineering:** Adds speculative abstractions, unrequested libraries, or dead flexibility. | **Atomic Goal-Backward Planning (`/plan`):** Deconstructs goals into 2-to-5 minute bite-sized tasks with explicit interfaces and global constraints. |
-| **"Trust Me, It Works" Claims:** Asserts code passes without running tests or inspecting terminal output. | **Verification Before Completion:** Requires raw command output, falsifiable tests, and hard proof before claiming completion. |
-| **Hallucinated Green Tests:** Writes tests that pass tautologically without exercising the implementation. | **Strict Red-Green-Refactor TDD:** Mandates viewing the test fail first with expected error message before writing single-line solutions. |
-| **Circular Debugging Loops:** Guesses random fixes in an endless cycle of file edits. | **4-Phase Systematic Debugging (`/debug`):** Enforces root-cause analysis, polluter isolation, and reproducible test cases before touching code. |
-
----
-
-## 📊 Why Superpowers vs Standard AI Prompting?
-
-| Capability | Standard AI Prompting / Ad-hoc Chat | Google Antigravity + Superpowers |
-| :--- | :---: | :---: |
-| **Requirements Discovery** | ❌ Assumptions & guessing | ✅ Socratic design interview (`brainstorming`) |
-| **Design Documentation** | ❌ Forgotten in chat context | ✅ Persistent markdown PRDs in `docs/plans/` |
-| **Task Granularity** | ❌ Monolithic giant edits | ✅ 2-5 minute atomic tasks (`writing-plans`) |
-| **Test Verification** | ❌ Optional or hallucinated | ✅ Mandatory Red-Green-Refactor TDD |
-| **Git Workspace Isolation** | ❌ Pollutes active branch | ✅ Clean ephemeral Git worktrees / branches |
-| **Adversarial Code Review** | ❌ Self-congratulatory praise | ✅ Structured reviewer contract (`requesting-code-review`) |
-| **Failure Diagnostics** | ❌ "I apologize, let me retry" | ✅ Forensic transcript inspection (`diagnosing-superpowers`) |
-| **Fullstack Architecture** | ❌ Generic boilerplate | ✅ Battle-tested patterns for React, Go, Node, Python |
+| **Upstream** | Synced 15 core skills to **obra/superpowers v7.0.1** (`2ce8aa1`). |
+| **Brainstorming** | Rebuilt for v7: digs for project context before asking, plays requests back, sizes the work, and writes the design doc before building. |
+| **Compaction safety** | `subagent-driven-development` and `writing-skills` moved supporting docs into `references/` so they survive Claude Code compaction. |
+| **Antigravity path fix** | Workspace skills now live in **`.agents/skills/`** — the path `agy` actually scans. The old `.agent/skills` layout is no longer required. |
+| **Native plugin** | Added `.antigravity-plugin/plugin.json`, so `agy plugin validate .` and `agy plugin install <repo>` work cleanly. |
+| **Claude Code** | Added `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, and the `hooks/` session bootstrap, plus a root `skills/` tree. |
+| **Portability** | Removed hardcoded absolute paths; `GEMINI.md` is now a merge-safe bootstrap that works in any checkout. |
+| **Drift guard** | `npm run sync:skills` regenerates the Antigravity view; `npm run check:skills` fails CI when it drifts from upstream. |
 
 ---
 
 ## ⚡ Getting Started in 30 Seconds
 
-### Automatic Installation (Recommended)
+### Antigravity CLI (recommended)
 
-Run this single command from your project root:
+Install Superpowers as a native Antigravity plugin from this repository:
+
+```bash
+agy plugin install https://github.com/SriSatyaLokesh/superpowers-for-antigravity
+```
+
+Antigravity lists every installed skill's description, and `using-superpowers` tells the model to load it at the start of a conversation. Reinstall with the same command to update.
+
+Verify the install:
+
+```bash
+agy plugin list
+agy plugin validate .
+```
+
+### 🛸 Using with the Antigravity CLI (`agy`)
+
+If you would rather keep the skills in your workspace (committed with the project), install the workspace layout instead:
 
 ```bash
 npx github:SriSatyaLokesh/superpowers-for-antigravity
 ```
 
-This automates the entire setup:
-1. Installs `.agent/` with all 23 production skills and workflows.
-2. Installs `.gemini/GEMINI.md` system prompt and Antigravity tool bridges.
-3. Installs `PROJECT_RULES.md` (the Antigravity Constitution) and `SUPERPOWER-STYLE.md`.
-4. Configures clean ignore patterns in your project.
+This creates:
 
----
+- `.agents/skills/` — all 24 skills, the path `agy` discovers automatically.
+- `.agents/workflows/` — legacy `/brainstorm`, `/plan`, `/execute`, `/review`, `/debug`, `/help` aliases.
+- `GEMINI.md` — a merge-safe bootstrap block pointing at the skills and rules.
+- `adapters/GEMINI.md` — optional Gemini model guidance.
+- `PROJECT_RULES.md` and `SUPERPOWER-STYLE.md` — the process constitution and style guide.
 
-### Local Manual Installation
+Then start the CLI:
 
-If you prefer installing without `npx`:
+```bash
+agy
+/skills
+```
+
+Every skill also becomes a slash command automatically, e.g. `/brainstorming`, `/writing-plans`, `/test-driven-development`, `/systematic-debugging`.
+
+### 🤖 Using with Claude Code
+
+This repository is a valid Claude Code plugin marketplace. Add it once:
+
+```text
+/plugin marketplace add SriSatyaLokesh/superpowers-for-antigravity
+/plugin install superpowers@superpowers-antigravity
+```
+
+Claude Code loads the 15 upstream core skills from `skills/` and the session bootstrap from `hooks/`.
+
+If you want the skills as **project skills** in a specific repository instead, run:
+
+```bash
+npx github:SriSatyaLokesh/superpowers-for-antigravity --claude
+```
+
+That copies all 24 skills into `.claude/skills/`, where Claude Code discovers them as project skills.
+
+### Workspace install via npx
+
+Already covered above — one command, no global state:
+
+```bash
+npx github:SriSatyaLokesh/superpowers-for-antigravity
+```
+
+The installer is idempotent. It never overwrites an existing `GEMINI.md`; it appends a marked block once and leaves the rest of the file alone.
+
+### Manual install
 
 <details>
 <summary><b>🪟 Windows (PowerShell)</b></summary>
 
 ```powershell
-# 1. Clone into a temporary folder
 git clone https://github.com/SriSatyaLokesh/superpowers-for-antigravity.git powers-temp
 
-# 2. Copy the core Antigravity assets into your project root
-xcopy /E /I powers-temp\.agent .agent
-xcopy /E /I powers-temp\.gemini .gemini
+xcopy /E /I powers-temp\.agents .agents
 xcopy /E /I powers-temp\adapters adapters
 copy powers-temp\PROJECT_RULES.md .\
 copy powers-temp\SUPERPOWER-STYLE.md .\
+copy powers-temp\GEMINI.md .\
 
-# 3. Clean up the temporary clone
 Remove-Item -Recurse -Force powers-temp
 ```
 
@@ -126,38 +161,31 @@ Remove-Item -Recurse -Force powers-temp
 <summary><b>🐧 macOS / Linux (Bash)</b></summary>
 
 ```bash
-# 1. Clone into a temporary folder
 git clone https://github.com/SriSatyaLokesh/superpowers-for-antigravity.git powers-temp
 
-# 2. Copy the core Antigravity assets into your project root
-cp -r powers-temp/.agent ./
-cp -r powers-temp/.gemini ./
+cp -r powers-temp/.agents ./
 cp -r powers-temp/adapters ./
 cp powers-temp/PROJECT_RULES.md ./
 cp powers-temp/SUPERPOWER-STYLE.md ./
+cp powers-temp/GEMINI.md ./
 
-# 3. Clean up the temporary clone
 rm -rf powers-temp
 ```
 
 </details>
 
----
+### Global install
 
-### Global Machine-Wide Installation
-
-Enable Superpowers globally so **every project** opened in Google Antigravity automatically inherits the 23-skill catalog:
+Global skills are available in every workspace. Antigravity's `~/.gemini/config/skills/` location is recognized by the Antigravity App, the IDE, and the CLI.
 
 <details>
 <summary><b>🪟 Windows Global Setup</b></summary>
 
 ```powershell
-# Clone to permanent location in your user profile
 git clone https://github.com/SriSatyaLokesh/superpowers-for-antigravity.git "$env:USERPROFILE\.agents\superpowers"
 
-# Create global skills link
-New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills"
-cmd /c mklink /J "$env:USERPROFILE\.agents\skills\superpowers" "$env:USERPROFILE\.agents\superpowers\.agent\skills"
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.gemini\config\skills" | Out-Null
+Copy-Item -Recurse -Force "$env:USERPROFILE\.agents\superpowers\.agents\skills\*" "$env:USERPROFILE\.gemini\config\skills\"
 ```
 
 </details>
@@ -166,12 +194,10 @@ cmd /c mklink /J "$env:USERPROFILE\.agents\skills\superpowers" "$env:USERPROFILE
 <summary><b>🐧 macOS / Linux Global Setup</b></summary>
 
 ```bash
-# Clone to your home directory
 git clone https://github.com/SriSatyaLokesh/superpowers-for-antigravity.git ~/.agents/superpowers
 
-# Create global skills link
-mkdir -p ~/.agents/skills
-ln -s ~/.agents/superpowers/.agent/skills ~/.agents/skills/superpowers
+mkdir -p ~/.gemini/config/skills
+cp -r ~/.agents/superpowers/.agents/skills/* ~/.gemini/config/skills/
 ```
 
 </details>
@@ -184,11 +210,11 @@ ln -s ~/.agents/superpowers/.agent/skills ~/.agents/skills/superpowers
 
 ```mermaid
 flowchart LR
-    A["💡 1. Brainstorm<br/><code>/brainstorm</code>"] --> B["📐 2. Plan<br/><code>/plan</code>"]
-    B --> C["⚙️ 3. Execute<br/><code>/execute</code>"]
-    C --> D["🔍 4. Review<br/><code>/review</code>"]
-    D --> E["✅ 5. Verify & Merge<br/><code>Hard Proof</code>"]
-    
+    A["💡 1. Brainstorm<br/><code>/brainstorming</code>"] --> B["📐 2. Plan<br/><code>/writing-plans</code>"]
+    B --> C["⚙️ 3. Execute<br/><code>/executing-plans</code>"]
+    C --> D["🔍 4. Review<br/><code>/requesting-code-review</code>"]
+    D --> E["✅ 5. Verify & Merge<br/><code>verification-before-completion</code>"]
+
     style A fill:#7B2D8E,color:#fff,stroke:none
     style B fill:#FF6D00,color:#fff,stroke:none
     style C fill:#E91E63,color:#fff,stroke:none
@@ -196,205 +222,191 @@ flowchart LR
     style E fill:#00C853,color:#fff,stroke:none
 ```
 
-| Phase | Purpose | Slash Command | Produced Artifact |
+| Phase | Purpose | Skill / Slash Command | Produced Artifact |
 | :--- | :--- | :---: | :--- |
-| **1. Design** | Socratic inquiry, clarifying edge cases, picking architecture | `/brainstorm` | `docs/plans/YYYY-MM-DD-<feature>-design.md` |
-| **2. Strategy** | Goal-backward atomic tasks with explicit contracts | `/plan` | `docs/plans/YYYY-MM-DD-<feature>-plan.md` |
-| **3. Build** | Strict Red-Green-Refactor TDD with bite-sized commits | `/execute` | Clean, passing source files + tests |
-| **4. Critique** | Adversarial review against constraints & specs | `/review` | Review scorecard & code quality assessment |
-| **5. Diagnose** | Forensic analysis when sessions drift or tests fail | `/debug` | Root-cause proof & polluter isolation |
+| **1. Design** | Understand intent, explore approaches, agree a design | `/brainstorming` | `docs/plans/YYYY-MM-DD-<feature>-design.md` |
+| **2. Strategy** | Goal-backward atomic tasks with explicit contracts | `/writing-plans` | `docs/plans/YYYY-MM-DD-<feature>-plan.md` |
+| **3. Build** | Red-Green-Refactor TDD with bite-sized commits | `/executing-plans` or `/subagent-driven-development` | Passing source files + tests |
+| **4. Critique** | Adversarial review against the spec and constraints | `/requesting-code-review` | Review findings and fixes |
+| **5. Verify** | Evidence before assertion | `/verification-before-completion` | Captured command output |
 
----
-
-### Mission Control Slash Commands
-
-Type these directly in your Google Antigravity chat window:
-
-| Slash Command | Role | Description |
-| :--- | :--- | :--- |
-| **`/brainstorm`** | 💡 The Architect | Explores intent, interviews the user, explores 2-3 approaches, and writes design docs. |
-| **`/plan`** | 📐 The Strategist | Converts design docs into atomic 2-5 minute tasks with precise test commands. |
-| **`/execute`** | ⚙️ The Builder | Runs implementation plan using subagent orchestration or inline TDD execution. |
-| **`/review`** | 🔍 The Reviewer | Adversarial code reviewer checking adherence to design, clean architecture, and test coverage. |
-| **`/debug`** | 🐛 The Investigator | 4-phase systematic debugging: isolate, reproduce with failing test, fix, and prove. |
-| **`/audit`** | 🌐 Search & AI Auditor | Audits websites for SEO, GEO (AI search engines), and AEO (featured snippets) with agency-grade reports. |
-| **`/help`** | ❓ Mission Control | Displays the active Antigravity Superpowers dashboard, skills, and environment health. |
-
----
+The legacy workflow aliases (`/brainstorm`, `/plan`, `/execute`, `/review`, `/debug`, `/help`) remain available from `.agents/workflows/` for Antigravity surfaces that still read workflows.
 
 ### 📋 Copy-Paste Daily Prompt Templates
 
-Supercharge your day-to-day coding in Google Antigravity with these high-leverage prompts:
-
 #### 1. Developing a New Feature (Design-First)
+
 ```markdown
-/brainstorm I want to add [Feature Name, e.g. JWT token rotation with Redis blacklist].
-Interview me Socratically, propose 2-3 architectural approaches with trade-offs, and once we agree, produce a complete design document in docs/plans/.
+/brainstorm I want to add [Feature Name].
+Read the project first so you do not ask what the code already answers. Then interview me about the one thing still open, propose 2-3 approaches with trade-offs, and write a design doc in docs/plans/ before any code.
 ```
 
 #### 2. Creating an Atomic Implementation Plan
+
 ```markdown
-/plan Using the design doc at docs/plans/[YYYY-MM-DD-feature-design.md], break down the implementation into atomic 2-5 minute tasks following Red-Green-Refactor TDD. Include exact file paths, interfaces, and verification commands for every step.
+/writing-plans Using docs/plans/[YYYY-MM-DD-feature-design.md], write an atomic implementation plan with exact file paths, interfaces, test assertions, and verification commands for every step.
 ```
 
-#### 3. Fixing a Tricky Bug with Forensic Proof
+#### 3. Executing a Plan
+
 ```markdown
-/debug We are seeing [Bug Description or Error Message] when [Action Performed].
-Do not propose code changes yet. Execute 4-phase systematic debugging: formulate hypotheses, create an automated failing reproduction test, isolate the root cause, and then show me the fix.
+/executing-plans Execute docs/plans/[YYYY-MM-DD-feature-plan.md] inline with strict Red-Green-Refactor TDD. Show the failing test output before writing the implementation, and the passing output before moving on.
 ```
 
-#### 4. Adversarial Code Review Before Merge
+#### 4. Fixing a Bug with Forensic Proof
+
 ```markdown
-/review Perform a rigorous code review on our recent branch changes against the design spec. Hunt for missing edge cases, untested failure modes, race conditions, over-engineering, and adherence to PROJECT_RULES.md.
+/systematic-debugging We see [bug] when [action]. Do not propose fixes yet. Form hypotheses, write an automated failing reproduction, isolate the root cause, then show the fix with proof.
+```
+
+#### 5. Adversarial Review Before Merge
+
+```markdown
+/requesting-code-review Review this branch against the design spec. Hunt for missing edge cases, untested failure modes, race conditions, over-engineering, and violations of PROJECT_RULES.md.
 ```
 
 ---
 
 ## 🧬 Complete 24-Skill Library
 
-Antigravity Superpowers includes **24 production-ready skills**: 15 upstream core skills (synced with `obra/superpowers` v6.4.2) + 9 custom engineering skills.
-
-```
-.agent/skills/
-├── Core Superpowers (v6.4.2)
-│   ├── brainstorming/                 # Socratic design interview & visual companion
-│   ├── diagnosing-superpowers/        # Forensic transcript analysis & bug reports
-│   ├── dispatching-parallel-agents/   # Multi-agent coordination without state conflicts
-│   ├── executing-plans/               # Disciplined plan execution with checkpoints
-│   ├── finishing-a-development-branch/# Branch merge/PR workflow & cleanup
-│   ├── receiving-code-review/         # Technical rigor on review feedback
-│   ├── requesting-code-review/        # Pre-merge adversarial verification
-│   ├── subagent-driven-development/   # Plan-scoped workspaces (.superpowers/sdd/)
-│   ├── systematic-debugging/          # 4-phase root cause & polluter isolation
-│   ├── test-driven-development/       # Strict Red-Green-Refactor with falsifiability
-│   ├── using-git-worktrees/           # Ephemeral isolated worktrees
-│   ├── using-superpowers/             # Antigravity tool mappings & SOP bootstrap
-│   ├── verification-before-completion/# Evidence-first proof requirement
-│   ├── writing-plans/                 # Atomic goal-backward implementation plans
-│   └── writing-skills/                # Skill authoring with subagent verification
-└── Specialized Engineering
-    ├── frontend-design/               # Production-grade distinctive UI/UX design
-    ├── mcp-builder/                   # FastMCP & TypeScript Model Context Protocol
-    ├── senior-architect/             # Scalable system design, C4 diagrams, ADRs
-    ├── senior-backend/               # Go/Node/Python DB optimization & robust APIs
-    ├── senior-fullstack/              # React, Next.js, Node, GraphQL, Postgres
-    ├── seo-geo-aeo/                   # Full-featured SEO, GEO (AI search), and AEO website audit tool
-    ├── skill-creator/                 # Guided packaging of custom skills
-    ├── web-artifacts-builder/         # Elaborate React/Tailwind/shadcn dashboards
-    └── webapp-testing/                # Playwright-based frontend browser automation
-```
+`.agents/skills/` contains **24 skills**: **15 upstream core skills** (byte-for-byte from `obra/superpowers` v7.0.1) plus **9 fork-specific engineering skills**.
 
 ### 1. Core Superpowers (15 Skills)
 
-| Skill Name | Purpose & Workflow Trigger | Upstream v6.4.2 Capabilities |
+| Skill | Purpose | v7.0.1 Capability |
 | :--- | :--- | :--- |
-| **`brainstorming`** | Pre-coding discovery & design | Three-path router (fast / standard / deep), interactive visual companion. |
-| **`writing-plans`** | Goal-backward planning | Leaner atomic plans with global constraints and per-task interface contracts. |
-| **`executing-plans`** | Inline implementation | Task execution with batch checkpoints and step-by-step verification. |
-| **`subagent-driven-development`** | Parallel subagents | Plan-scoped workspaces (`.superpowers/sdd/<plan>`) & task reviewer loops. |
-| **`test-driven-development`** | Quality & correctness | Modern Red-Green-Refactor cycle with falsifiability rules (`writing-good-tests.md`). |
-| **`systematic-debugging`** | Bug resolution | 4-phase root cause analysis and state polluter isolation. |
-| **`diagnosing-superpowers`** | Workflow forensics | Transcript analysis, repeated work detection, and scrubbed bug reporting. |
-| **`verification-before-completion`** | Completion guardrail | Mandatory terminal execution proof before declaring any task done. |
-| **`requesting-code-review`** | Pre-merge verification | Adversarial review verifying code against spec and architecture. |
-| **`receiving-code-review`** | Feedback integration | Technical rigor when receiving review suggestions—verifies before applying. |
-| **`using-git-worktrees`** | Clean state isolation | Creates ephemeral workspaces using git worktrees or native tools. |
-| **`finishing-a-development-branch`** | Integration | Branch merging, PR creation, and worktree teardown. |
-| **`dispatching-parallel-agents`** | Concurrency | Safely executes 2+ independent tasks without shared state collision. |
-| **`using-superpowers`** | Environment bootstrap | Antigravity-native tool bridge (`references/antigravity-tools.md`). |
-| **`writing-skills`** | Meta-development | Creation, formatting, and subagent testing of new skills. |
+| **`brainstorming`** | Pre-coding discovery and design | Rebuilt: reads project context first, plays requests back, sizes the work, writes the design doc before building. |
+| **`writing-plans`** | Goal-backward planning | Lean plans recording decisions (signatures, assertions, values) rather than code transcripts. |
+| **`executing-plans`** | Inline implementation | Native execution with task lifecycle scripts and batch checkpoints. |
+| **`subagent-driven-development`** | Parallel subagents | Compaction-resilient: preflight, batching, fix loop, final review, and resuming live in `references/`. |
+| **`test-driven-development`** | Quality and correctness | Red-Green-Refactor with test falsifiability rules in `writing-good-tests.md`. |
+| **`systematic-debugging`** | Bug resolution | Four-phase root-cause analysis and state-polluter isolation. |
+| **`diagnosing-superpowers`** | Workflow forensics | Transcript analysis, repeated-work detection, and scrubbed bug reports. |
+| **`verification-before-completion`** | Completion guardrail | Requires captured terminal evidence before any success claim. |
+| **`requesting-code-review`** | Pre-merge verification | Adversarial review against spec and architecture. |
+| **`receiving-code-review`** | Feedback integration | Verifies feedback technically before applying it. |
+| **`using-git-worktrees`** | Clean state isolation | Ephemeral workspaces via native tools or git worktrees. |
+| **`finishing-a-development-branch`** | Integration | Branch merge, PR creation, and worktree teardown. |
+| **`dispatching-parallel-agents`** | Concurrency | Independent tasks without shared-state collisions. |
+| **`using-superpowers`** | Environment bootstrap | Tool mappings, including `references/antigravity-tools.md` for `agy`. |
+| **`writing-skills`** | Meta-development | Authoring, bulletproofing, discovery, and subagent testing; docs in `references/`. |
 
-### 2. Specialized Engineering Skills (9 Skills)
+### 2. Fork-Specific Engineering Skills (9 Skills)
 
-| Skill Name | Domain | Primary Capabilities |
+| Skill | Domain | Primary Capabilities |
 | :--- | :--- | :--- |
-| **`senior-architect`** | System Design | High-level system architecture, C4 diagrams, tech stack evaluation, and ADRs. |
-| **`senior-backend`** | Backend Systems | Scalable Node.js, Go, and Python microservices, query tuning, REST/GraphQL. |
-| **`senior-fullstack`** | Fullstack Apps | End-to-end scaffolding with React, Next.js, Postgres, and Node.js. |
-| **`frontend-design`** | Creative UI | Distinctive UI design avoiding bland AI aesthetics; rich typography & micro-interactions. |
-| **`web-artifacts-builder`** | Rich Artifacts | Multi-component standalone dashboards using React, Tailwind, and shadcn/ui. |
-| **`webapp-testing`** | E2E Testing | Browser automation, visual regression, and log inspection using Playwright. |
-| **`mcp-builder`** | Protocol Tools | High-quality Model Context Protocol (MCP) server creation in Python or TypeScript. |
-| **`seo-geo-aeo`** | Search & AI Visibility | Deep SEO, Generative Engine Optimization (ChatGPT/Perplexity/Gemini), and Answer Engine Optimization (featured snippets) audits with downloadable reports. |
-| **`skill-creator`** | Skill Authoring | Step-by-step authoring and testing of custom enterprise skills. |
+| **`senior-architect`** | System design | C4 diagrams, tech stack evaluation, ADRs, dependency analysis. |
+| **`senior-backend`** | Backend systems | Node.js, Go, and Python services, query tuning, REST/GraphQL. |
+| **`senior-fullstack`** | Fullstack apps | React, Next.js, Postgres, and Node.js scaffolding. |
+| **`frontend-design`** | Creative UI | Distinctive interfaces without generic AI aesthetics. |
+| **`web-artifacts-builder`** | Rich artifacts | Multi-component React, Tailwind, and shadcn/ui dashboards. |
+| **`webapp-testing`** | E2E testing | Playwright browser automation, screenshots, console logs. |
+| **`mcp-builder`** | Protocol tools | Model Context Protocol servers in Python or TypeScript. |
+| **`seo-geo-aeo`** | Search visibility | SEO, Generative Engine Optimization, and Answer Engine Optimization audits. |
+| **`skill-creator`** | Skill authoring | Guided creation and testing of new skills. |
+
+---
+
+## 🗂️ Repository Layout
+
+```text
+skills/                      # Canonical upstream core (15 skills, v7.0.1)
+.agents/skills/              # Antigravity workspace view (15 core + 9 custom)
+.agents/workflows/           # Legacy slash-command aliases for Antigravity
+.agents/plugins/             # Antigravity marketplace manifest
+.antigravity-plugin/         # Native Antigravity plugin manifest (agy plugin install)
+.claude-plugin/              # Claude Code plugin + marketplace manifests
+hooks/                       # Claude Code SessionStart bootstrap
+GEMINI.md                    # Portable workspace bootstrap (@-references)
+adapters/                    # Optional Gemini model guidance
+scripts/sync-skills.js       # Keeps skills/ and .agents/skills/ in lockstep
+scripts/init.js              # Cross-platform installer
+tests/                       # Skills, installer, README, and drift validation
+```
+
+`skills/` is canonical. `.agents/skills/` is generated by `npm run sync:skills`, and `npm test` fails if the two drift.
 
 ---
 
 ## 🧪 Strict Verification & Hard Proof Protocol
 
-Superpowers enforces **Evidence Before Assertion**. An agent running Superpowers is constitutionally forbidden from saying *"The tests pass"* or *"The feature is ready"* without showing fresh command output in the conversation transcript:
+Superpowers forbids claiming success without fresh command output in the transcript:
 
-```
+```text
 [❌ FORBIDDEN CLAIM]
-"I have implemented the greeting service and all tests are passing."
+"I implemented the greeting service and all tests pass."
 
-[✅ REQUIRED SUPERPOWERS PROOF]
+[✅ REQUIRED PROOF]
 $ node --test tests/greeting.test.js
 ✔ should format greeting with titlecase name (2.41ms)
 ✔ should throw error when name is empty string (1.12ms)
 ℹ tests 2
-ℹ suites 0
 ℹ pass 2
 ℹ fail 0
-"All 2 tests passed. Verified on Node v20.10.0. Ready for review."
+"All 2 tests passed. Verified on Node v22. Ready for review."
 ```
 
 ---
 
-## 🤝 Contributing & Community
+## 🔄 Keeping Upstream In Sync
 
-We welcome contributions from the global agentic software engineering community! Whether you are proposing a new specialized skill, refining existing prompts, or improving developer documentation:
+```bash
+# 1. Pull the latest upstream release
+git fetch upstream --tags
 
-- 📖 **Contributor Guidelines**: Read our comprehensive [CONTRIBUTING.md](CONTRIBUTING.md) guide.
-- 🛡️ **Code of Conduct**: We adhere to the [Contributor Covenant](CODE_OF_CONDUCT.md).
-- 💡 **Propose a Skill**: Use our [Skill Proposal Template](.github/ISSUE_TEMPLATE/skill_proposal.md) to pitch a new skill with clear YAML frontmatter and automated test verification.
-- 🐛 **Report a Bug**: Submit forensic reports with transcripts and logs via our [Bug Report Template](.github/ISSUE_TEMPLATE/bug_report.md).
-- 🚀 **Pull Requests**: Follow conventional commits (`feat:`, `fix:`, `docs:`, `test:`) and ensure all PRs are rebased on latest `main` with `npm test` passing 100%.
+# 2. Replace the canonical tree
+git checkout upstream/main -- skills
+
+# 3. Regenerate the Antigravity view, bump versions, run the suite
+npm run sync:skills
+npm test
+```
+
+`npm run check:skills` verifies parity without writing anything, and the test suite runs it on every `npm test`.
 
 ---
 
 ## ❓ Frequently Asked Questions (AEO)
 
 ### What is Superpowers for Google Antigravity?
-Superpowers for Google Antigravity is an agentic software development Standard Operating Procedure (SOP) and skill library. It equips Google Antigravity (`agy`) with structured engineering workflows—including Socratic design brainstorming, atomic planning, Red-Green-Refactor test-driven development, and verifiable evidence checkpoints.
+It is an agentic software engineering SOP and skill library for Claude Code and Google Antigravity (`agy`). It enforces Socratic design, atomic planning, Red-Green-Refactor TDD, systematic debugging, and evidence-based completion.
 
-### How do I install Superpowers in Google Antigravity?
-You can install Superpowers in any project in under 30 seconds by opening a terminal in your project root and running:
+### How do I install it in Antigravity?
+Install it as a native plugin:
+
 ```bash
-npx github:SriSatyaLokesh/superpowers-for-antigravity
+agy plugin install https://github.com/SriSatyaLokesh/superpowers-for-antigravity
 ```
-Alternatively, download the repository and copy `.agent/`, `.gemini/`, `PROJECT_RULES.md`, and `SUPERPOWER-STYLE.md` into your project root.
 
-### How do Antigravity skills work?
-Antigravity skills are modular instruction packages located in `.agent/skills/<skill-name>/SKILL.md`. Each skill features YAML frontmatter with semantic trigger conditions and detailed behavioral rules. When an agent receives a matching user prompt (or slash command), the runtime activates the skill, guaranteeing adherence to the procedure.
+Or install the workspace layout with `npx github:SriSatyaLokesh/superpowers-for-antigravity`, which writes `.agents/skills/` and a portable `GEMINI.md`.
 
-### How does Superpowers enforce Test-Driven Development (TDD)?
-Superpowers mandates a 3-step Red-Green-Refactor cycle:
-1. **Red:** Write a focused unit test for a single requirement and run it to verify it fails with the expected failure message.
-2. **Green:** Write the minimal implementation code to make the test pass.
-3. **Refactor:** Clean up code while keeping tests green.
-The agent must present captured terminal output of both the failing run and the passing run as hard proof.
+### Where does Antigravity look for workspace skills?
+At `<workspace-root>/.agents/skills/`. Antigravity still keeps backward compatibility for `.agent/skills` in the App, but `.agents/skills` is the default and the only path the `agy` CLI scans. This repository uses `.agents/skills`.
 
-### What is the difference between upstream obra/superpowers and this repository?
-Upstream `obra/superpowers` was originally architected for Claude/OpenCode harnesses. This repository:
-1. Native-ports all 15 upstream skills to **Google Antigravity (`agy`)**, mapping tools to Antigravity primitives (`invoke_subagent`, `run_command`, `replace_file_content`).
-2. Tracks upstream release **v6.4.2** (`8ca22db`), including `diagnosing-superpowers`, `writing-good-tests.md`, and plan-scoped subagent workspaces.
-3. Expands the methodology with **9 specialized engineering skills** (`seo-geo-aeo`, `senior-architect`, `senior-backend`, `senior-fullstack`, `webapp-testing`, `mcp-builder`, `frontend-design`, `web-artifacts-builder`, `skill-creator`).
-4. Adds automated cross-platform installation scripts (`scripts/init.js`, `npx` runner) for Windows, macOS, and Linux.
+### Can I use it with Claude Code?
+Yes. Add this repository as a marketplace and install the plugin:
 
-### Does Superpowers work on Windows, macOS, and Linux?
-Yes. Superpowers for Antigravity is 100% cross-platform. All scripts, worktree helpers, and slash commands are tested across Windows (PowerShell / cmd), macOS (zsh), and Linux (bash).
+```text
+/plugin marketplace add SriSatyaLokesh/superpowers-for-antigravity
+/plugin install superpowers@superpowers-antigravity
+```
+
+Or run `npx github:SriSatyaLokesh/superpowers-for-antigravity --claude` to place all 24 skills in `.claude/skills/`.
+
+### Why are there two skill directories?
+`skills/` is the canonical upstream tree, kept byte-for-byte identical so future syncs are a single `git checkout`. `.agents/skills/` is the Antigravity view (core plus the 9 fork-specific skills). `scripts/sync-skills.js` keeps them identical, and the test suite fails on drift.
+
+### Does it work on Windows, macOS, and Linux?
+Yes. The installer, hook launcher, and sync scripts are cross-platform. `hooks/run-hook.cmd` is a polyglot wrapper that finds Git Bash even when `PATH` is broken.
 
 ---
 
 ## 🤝 Credits & Upstream Attribution
 
-This project builds upon the pioneering work of the open-source agentic engineering community:
-
-- **[Jesse Vincent (obra)](https://github.com/obra)** & **Prime Radiant**: Creators of the original [obra/superpowers](https://github.com/obra/superpowers) methodology.
-- **[Google Antigravity Team](https://antigravity.google)**: Creators of the next-generation agentic coding platform and `agy` CLI runtime.
-- **[Alex Labat](https://github.com/)**: Creator of the SEO/GEO/AEO audit framework adapted into the Antigravity `seo-geo-aeo` skill.
-- **[Anthropic](https://github.com/anthropics/skills)**: Architecture and capability patterns for modular LLM agent skills.
+- **[Jesse Vincent (obra)](https://github.com/obra)** and **Prime Radiant** — creators of [obra/superpowers](https://github.com/obra/superpowers).
+- **[Google Antigravity Team](https://antigravity.google)** — creators of the Antigravity platform, the `.agents/skills` standard, and the `agy` CLI.
+- **[Alex Labat](https://github.com/)** — the SEO/GEO/AEO audit methodology adapted into `seo-geo-aeo`.
+- **[Anthropic](https://github.com/anthropics/skills)** — architecture and capability patterns for modular agent skills.
 
 ---
 

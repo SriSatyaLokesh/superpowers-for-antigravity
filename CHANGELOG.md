@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2026-10-22
+
+### Upstream Synchronization (obra/superpowers v7.0.1) & Dual-Harness Support
+
+#### Added
+- **Canonical upstream tree**: `skills/` now mirrors `obra/superpowers` **v7.0.1** (`2ce8aa1`) byte-for-byte for all 15 core skills.
+- **Claude Code support**: `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, and the `hooks/` session bootstrap (`hooks.json`, `run-hook.cmd`, `session-start`).
+- **Antigravity plugin support**: `.antigravity-plugin/plugin.json` and `.agents/plugins/marketplace.json`, so `agy plugin validate .` and `agy plugin install <repo>` work.
+- **Root `GEMINI.md`**: portable `@`-reference bootstrap for workspace and plugin installs.
+- **`scripts/sync-skills.js`**: regenerates the Antigravity view from the canonical tree, with a `--check` drift guard wired into `npm test`.
+- **`npx ... --claude`**: optional Claude Code project installation into `.claude/skills/`.
+
+#### Changed
+- **Antigravity skill location**: `.agent/skills/` → **`.agents/skills/`**, the path the `agy` CLI actually scans. Workflows moved to `.agents/workflows/`.
+- **Installer (`scripts/init.js`)**: installs `.agents/`, merges a marked bootstrap block into `GEMINI.md` instead of overwriting it, and is idempotent.
+- **`brainstorming`**: rebuilt upstream skill — reads project context before asking, plays requests back, sizes the work, and writes the design doc before building.
+- **`subagent-driven-development`** and **`writing-skills`**: supporting docs moved into `references/` so they survive Claude Code compaction.
+- **Documentation**: README, `antigravity/INSTALL.md`, and CONTRIBUTING updated for the dual-harness layout and `agy` 1.4.x behavior.
+
+#### Removed
+- **`.gemini/GEMINI.md`**: replaced by the portable root `GEMINI.md`; the old file contained hardcoded `file:///d:/professional/...` paths.
+- **Deprecated upstream files**: `brainstorming/spec-document-reviewer-prompt.md` and `test-driven-development/testing-anti-patterns.md`.
+
+#### Fixed
+- `agy plugin validate .` no longer fails with `no plugin.json found`.
+- `agy` now discovers workspace skills without relying on the legacy `.agent/skills` compatibility path.
+- Hardcoded machine-specific absolute paths removed from installable files.
+
 ## [1.2.0] - 2026-09-30
 
 ### SEO, GEO & AEO Skill Integration & Open-Source Contribution Framework

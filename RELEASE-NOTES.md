@@ -1,4 +1,41 @@
-# Superpowers for Antigravity — Release Notes
+# Superpowers for Antigravity - Release Notes
+
+## v2.0.0 (2026-10-22)
+
+This release synchronizes the fork with upstream [`obra/superpowers`](https://github.com/obra/superpowers) at **v7.0.1** and makes the same repository work in **Claude Code** and the **Antigravity `agy` CLI**.
+
+### 🚀 Highlights
+
+- **Upstream v7.0.1 Core Skills Synchronized**:
+  - **`brainstorming`**: rebuilt skill that reads project context before its first question, plays your request back, sizes the work, and writes a design document before building anything.
+  - **`subagent-driven-development`**: preflight, batching, fix loop, final review, resuming, and cannot-verify guidance moved into `references/` so the skill survives Claude Code compaction.
+  - **`writing-skills`**: discovery, bulletproofing, flowchart conventions, and the SKILL.md template moved into `references/`.
+  - **`executing-plans`**: Example Workflow removed; the rules above it already covered the same ground.
+  - **`requesting-code-review`**, **`systematic-debugging`**, **`diagnosing-superpowers`**: upstream fixes for argument handling, secret leakage in diagnostics, and issue templates.
+
+- **Correct Antigravity Discovery**:
+  - Workspace skills now live in **`.agents/skills/`**, the default path Antigravity scans and the only path `agy` 1.4.x scans. The previous `.agent/skills` layout did not work with the CLI.
+  - Workflows moved to `.agents/workflows/` for the legacy slash-command aliases.
+
+- **Native Plugins for Both Harnesses**:
+  - **Antigravity**: `.antigravity-plugin/plugin.json` plus `.agents/plugins/marketplace.json`. `agy plugin validate .` now reports 0 errors and 15 plugin skills.
+  - **Claude Code**: `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, `hooks/`, and the root `skills/` tree.
+
+- **Portable Installer**:
+  - `npx github:SriSatyaLokesh/superpowers-for-antigravity` installs `.agents/` and merges a marked bootstrap block into `GEMINI.md` instead of overwriting an existing file.
+  - `npx github:SriSatyaLokesh/superpowers-for-antigravity --claude` additionally installs all 24 skills into `.claude/skills/`.
+
+- **Drift Guard**:
+  - `scripts/sync-skills.js` regenerates `.agents/skills/` from the canonical `skills/` tree.
+  - `npm test` runs `--check` and fails when the two drift.
+
+### 🧪 Verification
+
+- `npm test` passes (skills, installer, README, and skill parity).
+- `agy plugin validate .` passes with 0 errors.
+- The installer is idempotent and preserves existing `GEMINI.md` content.
+
+---
 
 ## v1.1.0 (2026-09-30)
 

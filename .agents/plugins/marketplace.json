@@ -1,0 +1,20 @@
+{
+  "name": "superpowers-antigravity",
+  "interface": {
+    "displayName": "Superpowers for Antigravity"
+  },
+  "plugins": [
+    {
+      "name": "superpowers",
+      "source": {
+        "source": "url",
+        "url": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
