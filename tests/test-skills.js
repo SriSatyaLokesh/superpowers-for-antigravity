@@ -182,6 +182,11 @@ if (fs.existsSync(antigravityRef)) {
   } else {
     fail('antigravity-tools.md missing invoke_subagent reference');
   }
+  if (content.includes('Continuing Claude Superpowers Sessions in Antigravity') && content.includes('.superpowers/sdd')) {
+    pass('antigravity-tools.md includes Claude Superpowers session resumption guidance');
+  } else {
+    fail('antigravity-tools.md missing Claude Superpowers session resumption guidance');
+  }
 } else {
   fail(`Missing antigravity-tools.md at ${antigravityRef}`);
 }
@@ -247,6 +252,41 @@ if (!fs.existsSync(legacyGemini)) {
   pass('Legacy .gemini/GEMINI.md removed');
 } else {
   fail('Legacy .gemini/GEMINI.md still present');
+}
+
+// 10. Hook resilience & Claude drop-in migration
+console.log('\nValidating hook resilience & Claude drop-in migration:');
+const hooksJsonPath = path.join(repoRoot, 'hooks', 'hooks.json');
+const hooksJson = readJson(hooksJsonPath);
+const sessionHooks = hooksJson.hooks && hooksJson.hooks.SessionStart && hooksJson.hooks.SessionStart[0] && hooksJson.hooks.SessionStart[0].hooks;
+const hookEntry = sessionHooks && sessionHooks[0];
+
+if (hookEntry && hookEntry.powershell && hookEntry.powershell.includes('run-hook.cmd')) {
+  pass('hooks.json includes powershell dispatch for Windows Copilot/Claude Code');
+} else {
+  fail('hooks.json missing powershell dispatch in SessionStart hook');
+}
+
+const runHookContent = fs.readFileSync(path.join(repoRoot, 'hooks', 'run-hook.cmd'), 'utf8');
+if (runHookContent.includes('command -v zsh') && runHookContent.includes('SCRIPT_DIR="${0%[/\\\\]*}"')) {
+  pass('run-hook.cmd includes zero-subshell directory resolution and zsh fallback');
+} else {
+  fail('run-hook.cmd missing zero-subshell resolution or zsh fallback');
+}
+
+const sessionStartContent = fs.readFileSync(path.join(repoRoot, 'hooks', 'session-start'), 'utf8');
+if (sessionStartContent.includes("trap '' PIPE") && sessionStartContent.includes('read -r -d \'\'')) {
+  pass('session-start includes zero-fork read builtin and EPIPE trap');
+} else {
+  fail('session-start missing zero-fork read builtin or EPIPE trap');
+}
+
+const claudeMarketplace = readJson(path.join(repoRoot, '.claude-plugin', 'marketplace.json'));
+const defaultPlugin = claudeMarketplace.plugins && claudeMarketplace.plugins.find(p => p.name === 'superpowers');
+if (defaultPlugin && defaultPlugin.source === './') {
+  pass('Claude marketplace exposes drop-in plugin named "superpowers" from root "./"');
+} else {
+  fail('Claude marketplace does not expose drop-in plugin "superpowers" from "./"');
 }
 
 console.log('\n' + (failed ? '❌ SKILLS VALIDATION FAILED' : '🎉 ALL SKILLS VALIDATION CHECKS PASSED'));
