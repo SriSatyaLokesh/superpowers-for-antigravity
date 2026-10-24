@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.0] - 2026-10-24
+
+### Seamless Claude Session Resumption & Upstream Hook Performance
+
+#### Added
+- **Claude Superpowers Session Resumption**:
+  - `antigravity-tools.md` officially defines session resumption protocols for projects started in Claude Code with `obra/superpowers`.
+  - In-flight implementation plans in `docs/plans/` and progress ledgers in `.superpowers/sdd/<plan>/progress.md` are 100% recognized and resumed in Antigravity (`agy`) without repeating completed work.
+  - Dedicated "Continuing Claude Superpowers Sessions in Antigravity" guide added to README with full compatibility matrix.
+- **PowerShell Hook Dispatch**: added `powershell` hook command in `hooks/hooks.json` for Copilot CLI and Windows shells (`obra/superpowers#2189`).
+
+#### Changed
+- **Zero-Subshell Hook Wrapper (`hooks/run-hook.cmd`)**: Unix portion uses parameter expansion instead of subshell `$(cd ... && pwd)`, saving fork latency on Windows Git Bash, with zsh/sh fallback when bash is absent (`obra/superpowers#2503`).
+- **Zero-Fork SessionStart Hook (`hooks/session-start`)**:
+  - Eliminates all command substitutions and pipes; reads `using-superpowers` skill via bash `read` builtin.
+  - Absorbs EPIPE cleanly with `trap '' PIPE` and `printf 2>/dev/null` (`obra/superpowers#2081`).
+  - Parameter substitution string escaping executes orders of magnitude faster.
+- **Synchronized Skills**: updated `skills/` and `.agents/skills` to incorporate Antigravity session resumption guidance.
+
 ## [2.0.0] - 2026-10-22
 
 ### Upstream Synchronization (obra/superpowers v7.0.1) & Dual-Harness Support

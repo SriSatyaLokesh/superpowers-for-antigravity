@@ -21,3 +21,13 @@ your plan. As you complete each step, edit the artifact to mark it done (`- [x]`
 If the plan changes, update the checklist. Keep it current — it is your source of
 truth for what remains; once the conversation gets long, re-read it before starting
 each step.
+
+## Continuing Claude Superpowers Sessions in Antigravity
+
+When continuing a project or session that was previously running in Claude Code with Superpowers:
+- **Plans**: Existing plans in `docs/plans/` (or `docs/superpowers/plans/`) are canonical. Do not re-create or alter them; read the existing plan file directly.
+- **Progress Ledgers**: The SDD progress ledger is located at `.superpowers/sdd/<plan-slug>/progress.md`. Tasks already marked `complete` or `DONE` in the ledger are finished — never re-execute them. Resume execution at the next uncompleted task.
+- **Task Tracking in Antigravity**: Create an Antigravity task artifact (tracking checklist saved with `write_to_file`) reflecting only the remaining tasks from the ledger.
+- **Subagent Dispatch**: Dispatch subagents using Antigravity's `invoke_subagent` (`TypeName: "self"` for implementer and reviewer subagents).
+- **Ledger Continuity**: As tasks complete in Antigravity, append completions and rulings to the existing `.superpowers/sdd/<plan-slug>/progress.md` ledger so the audit trail remains intact across harnesses.
+
