@@ -1,5 +1,24 @@
 # Superpowers for Antigravity - Release Notes
 
+## v2.1.0 (2026-10-24)
+
+This release introduces seamless continuation of **Claude Superpowers (`obra/superpowers`) sessions in Google Antigravity (`agy`)**, along with upstream hook performance and polyglot shell resilience improvements.
+
+### 🚀 Highlights
+
+- **Claude Superpowers Session Resumption in Antigravity**:
+  - Engineers who started an agentic session in Claude Code can now switch to Google Antigravity with zero friction.
+  - Antigravity directly recognizes existing plans in `docs/plans/` and progress ledgers at `.superpowers/sdd/<plan>/progress.md`.
+  - Finished tasks are preserved and skipped; execution resumes from the next task using Antigravity's `invoke_subagent` and task artifacts.
+  - All 9 Antigravity specialized skills (`senior-architect`, `senior-backend`, `senior-fullstack`, `frontend-design`, `mcp-builder`, `webapp-testing`, `web-artifacts-builder`, `seo-geo-aeo`, `skill-creator`) are instantly available.
+
+- **Upstream Hook Performance & Polyglot Shell Support**:
+  - **Zero-Fork SessionStart (`hooks/session-start`)**: Eliminates subshell forks under Git Bash on Windows, dropping hook execution time from ~400ms down to ~45ms (`#2081`).
+  - **Zero-Subshell Wrapper (`hooks/run-hook.cmd`)**: Uses parameter expansion for directory resolution and gracefully falls back to zsh/sh when bash is missing (`#2503`).
+  - **Copilot PowerShell Dispatch (`hooks/hooks.json`)**: Adds native PowerShell command syntax for Windows Copilot/Claude Code execution (`#2189`).
+
+---
+
 ## v2.0.0 (2026-10-22)
 
 This release synchronizes the fork with upstream [`obra/superpowers`](https://github.com/obra/superpowers) at **v7.0.1** and makes the same repository work in **Claude Code** and the **Antigravity `agy` CLI**.

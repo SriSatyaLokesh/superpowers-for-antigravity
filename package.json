@@ -1,6 +1,6 @@
 {
     "name": "superpowers-for-antigravity",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "Upstream obra/superpowers v7.0.1 plus Antigravity-native skills — a 24-skill SOP for Claude Code and the Google Antigravity (agy) CLI.",
     "main": "scripts/init.js",
     "bin": {

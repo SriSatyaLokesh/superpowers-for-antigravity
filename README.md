@@ -4,7 +4,7 @@
 
 ### The 24-Skill Agentic Engineering SOP — synced with upstream `obra/superpowers` v7.0.1 and ready for both Claude Code and the Antigravity `agy` CLI
 
-[![Version](https://img.shields.io/badge/version-2.0.0-00C853?style=flat-square&logo=git)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.1.0-00C853?style=flat-square&logo=git)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-2196F3?style=flat-square)](LICENSE)
 [![Upstream](https://img.shields.io/badge/upstream-obra%2Fsuperpowers%20v7.0.1-7B2D8E?style=flat-square)](https://github.com/obra/superpowers)
 [![Skills Catalog](https://img.shields.io/badge/skills-24%20production%20skills-FF6D00?style=flat-square)](#-complete-24-skill-library)
@@ -18,7 +18,7 @@
 
 <br/>
 
-[⚡ Quickstart](#-getting-started-in-30-seconds) • [🤖 Claude Code](#-using-with-claude-code) • [🛸 Antigravity CLI](#-using-with-the-antigravity-cli-agy) • [🧬 Skills Library](#-complete-24-skill-library) • [🧪 Hard Proof](#-strict-verification--hard-proof-protocol) • [❓ FAQ](#-frequently-asked-questions-aeo)
+[⚡ Quickstart](#-getting-started-in-30-seconds) • [🛸 Antigravity CLI](#-using-with-the-antigravity-cli-agy) • [🔄 Continuing Claude Sessions](#-continuing-claude-superpowers-sessions-in-antigravity) • [🧬 Skills Library](#-complete-24-skill-library) • [🧪 Hard Proof](#-strict-verification--hard-proof-protocol) • [❓ FAQ](#-frequently-asked-questions-aeo)
 
 </div>
 
@@ -27,7 +27,7 @@
 > ### 💡 What is Superpowers for Google Antigravity?
 > **Superpowers for Google Antigravity** packages Jesse Vincent's [obra/superpowers](https://github.com/obra/superpowers) methodology as a 24-skill library that works in **Claude Code** and the **Google Antigravity CLI (`agy`)**. It prevents agents from hallucinating, scope-creeping, or writing untested code by enforcing **Socratic design**, **atomic planning**, **strict Red-Green-Refactor TDD**, **isolated git worktrees**, and **evidence before assertion**.
 >
-> Version **2.0.0** tracks upstream **v7.0.1** exactly: the rebuilt `brainstorming` skill, compaction-resilient `subagent-driven-development` and `writing-skills`, and the native Antigravity plugin manifest.
+> Version **2.1.0** tracks upstream **v7.0.1** and active `dev` hook optimizations: zero-fork Git Bash startup, polyglot shell fallbacks, and seamless resumption of Claude Superpowers plans, ledgers, and worktrees in Google Antigravity.
 
 ---
 
@@ -36,8 +36,8 @@
 - [🆕 What's New in 2.0.0](#-whats-new-in-200)
 - [⚡ Getting Started in 30 Seconds](#-getting-started-in-30-seconds)
   - [Antigravity CLI (recommended)](#antigravity-cli-recommended)
-  - [Claude Code](#-using-with-claude-code)
   - [Workspace install via npx](#workspace-install-via-npx)
+  - [Continuing Claude Sessions in Antigravity](#-continuing-claude-superpowers-sessions-in-antigravity)
   - [Manual install](#manual-install)
   - [Global install](#global-install)
 - [🎮 Daily Developer Playbook](#-daily-developer-playbook)
@@ -108,6 +108,47 @@ agy
 ```
 
 Every skill also becomes a slash command automatically, e.g. `/brainstorming`, `/writing-plans`, `/test-driven-development`, `/systematic-debugging`.
+
+### 🔄 Continuing Claude Superpowers Sessions in Antigravity
+
+If you started your project or an in-flight engineering session in **Claude Code with Superpowers (`obra/superpowers`)** and want to transition to **Google Antigravity (`agy`)**, you can continue immediately without starting over or losing context:
+
+1. **Install Superpowers for Antigravity** in your project workspace:
+   ```bash
+   # Option A: Install as an Antigravity plugin
+   agy plugin install https://github.com/SriSatyaLokesh/superpowers-for-antigravity
+
+   # Option B: Or install workspace files into your project
+   npx github:SriSatyaLokesh/superpowers-for-antigravity
+   ```
+
+2. **Start the Antigravity CLI**:
+   ```bash
+   agy
+   ```
+
+3. **Continue your session seamlessly**:
+   Simply prompt the Antigravity agent:
+   > "Continue the implementation plan at docs/plans/<your-plan>.md"
+
+   Antigravity will automatically:
+   - **Detect existing plans** in `docs/plans/` (or `docs/superpowers/plans/`) without re-generating them.
+   - **Inspect the progress ledger** at `.superpowers/sdd/<plan-slug>/progress.md`. Tasks marked `complete` or `DONE` by Claude are treated as verified and skipped.
+   - **Resume execution** at the exact first uncompleted task using Antigravity's subagent engine (`invoke_subagent`) and live task tracking artifacts (`task.md`).
+   - **Maintain ledger continuity**, appending new completions and rulings to the existing `.superpowers/sdd/` ledger so the cross-harness audit trail is preserved.
+   - **Unlock 9 additional skills** in Antigravity: `senior-architect`, `senior-backend`, `senior-fullstack`, `frontend-design`, `mcp-builder`, `webapp-testing`, `web-artifacts-builder`, `seo-geo-aeo`, and `skill-creator`.
+
+#### 🧭 Compatibility Matrix: Claude Superpowers ⇄ Antigravity
+
+| Artifact / Concept | Claude Superpowers (`obra/superpowers`) | Antigravity (`superpowers-for-antigravity`) | Status |
+| :--- | :--- | :--- | :--- |
+| **Plan Files** | `docs/plans/YYYY-MM-DD-*-plan.md` | `docs/plans/YYYY-MM-DD-*-plan.md` | 100% Identical & Shared |
+| **SDD Progress Ledger** | `.superpowers/sdd/<slug>/progress.md` | `.superpowers/sdd/<slug>/progress.md` | 100% Resumable |
+| **Task Briefs & Packages** | `.superpowers/sdd/<slug>/` | `.superpowers/sdd/<slug>/` | 100% Compatible |
+| **Git Worktrees** | `.worktrees/` | `.worktrees/` or git worktree | Fully Compatible |
+| **Subagent Delegation** | Claude `Task` tool | Antigravity `invoke_subagent` (`self`/`research`) | Native Translation |
+| **Checklist / Todos** | Claude harness todos | Antigravity task artifact (`task.md`) | Native Translation |
+| **Skills Available** | 15 core skills | 24 skills (15 core + 9 specialized) | 9 New Skills Added |
 
 ### 🤖 Using with Claude Code
 
